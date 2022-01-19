@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">UN-Toxic</string>
+    <string name="pro">Verifying Your Profile !!</string>
+    <string name="enter_your_phone_no">Enter Your Phone No.</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify">Verify OTP</string>
 </resources>

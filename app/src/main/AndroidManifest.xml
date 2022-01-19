@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNToxic">
         <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
