@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "489228363691",
+    "project_id": "un-toxic",
+    "storage_bucket": "un-toxic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489228363691:android:8af34f8d5e6bf8e15ad4ee",
+        "android_client_info": {
+          "package_name": "com.godspeed.un_toxic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489228363691-1g68n4pll2517fkj66jr4blhjk8q35n6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.godspeed.un_toxic",
+            "certificate_hash": "76b170dd274f35aa15c985d263c2bed3330a15a3"
+          }
+        },
+        {
+          "client_id": "489228363691-vdbt9hslnkq6ig8kdq0al2089ntacou6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4YPBihqx5eJtqDfjrGd8o23ux7BbT9ts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489228363691-vdbt9hslnkq6ig8kdq0al2089ntacou6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
