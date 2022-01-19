@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNToxic">
         <activity
+            android:name=".Homepage"
+            android:exported="false"
+            android:label="@string/title_activity_homepage" />
+        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity

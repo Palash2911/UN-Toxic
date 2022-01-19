@@ -17,7 +17,7 @@ import com.google.firebase.ktx.Firebase
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
-    private val TAG = "LoginActivity"
+    private val TAG = "Login"
     private val auth = FirebaseAuth.getInstance()
     private var storedVerificationId: String = ""
     private lateinit var binding: ActivityMainBinding
@@ -27,25 +27,23 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         binding.layoutLoadingProfile.visibility = View.VISIBLE
         binding.authCardView.visibility = View.GONE
-//        if(auth.currentUser != null){
-//            db.collection("Profiles").document(auth.currentUser!!.uid).get()
-//                .addOnCompleteListener{task->
-//                    if(task.result?.exists() == true){
-//                        val intent = Intent(this, Homepage::class.java)
-//                        startActivity(intent)
-//                        finish()
-//                    } else {
-//                        val intent = Intent(this, UserProfile::class.java)
-//                        startActivity(intent)
-//                        finish()
-//                    }
-//
-//                }
-//        } else {
-            binding.layoutLoadingProfile.visibility = View.VISIBLE
-            binding.authCardView.visibility = View.GONE
-//        }
-
+        if(auth.currentUser != null){
+            db.collection("Profiles").document(auth.currentUser!!.uid).get()
+                .addOnCompleteListener{task->
+                    if(task.result?.exists() == true){
+                        val intent = Intent(this, Homepage::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        val intent = Intent(this, Profile::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+        } else {
+            binding.layoutLoadingProfile.visibility = View.GONE
+            binding.authCardView.visibility = View.VISIBLE
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -129,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
-                    val intent = Intent(this, ContactsContract.Profile::class.java)
+                    val intent = Intent(this, Profile::class.java)
                     startActivity(intent)
                     finish()
                 } else {

@@ -5,4 +5,18 @@
     <string name="get_otp">Get OTP</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="verify">Verify OTP</string>
+    <string name="etn">Enter Your Name</string>
+    <string name="npds">No. of Smoke Per Day -</string>
+    <string name="nofsmoke">TextView</string>
+    <string name="nofdr">No of Glass(250ml) Per Day -</string>
+    <string name="noofdrinks">TextView</string>
+    <string name="entp">Enter Your Phone No.</string>
+    <string name="drinking">Drinking</string>
+    <string name="smoking">Smoking</string>
+    <string name="conitnue">Conitnue</string>
+    <string name="enter_no">Enter No.</string>
+    <string name="title_activity_homepage">Homepage</string>
+    <string name="title_home">Progress</string>
+    <string name="title_dashboard">Rewards</string>
+    <string name="title_notifications">Tips</string>
 </resources>
