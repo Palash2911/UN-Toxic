@@ -16,4 +16,8 @@
     <string name="title_notifications">Tips</string>
     <string name="pricepersm">Enter Price Per Cigarette</string>
     <string name="profile">Profile</string>
+    <string name="money_reserved">Money Reserved</string>
+    <string name="rve">Rewards Earned</string>
+    <string name="numberofsmokes">Cigarettes Free</string>
+    <string name="lifesave">Life Saved</string>
 </resources>
