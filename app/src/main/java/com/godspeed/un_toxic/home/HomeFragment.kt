@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentProgressBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
+        val textView: TextView = binding.tv15
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })

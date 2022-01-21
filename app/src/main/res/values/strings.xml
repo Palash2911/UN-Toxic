@@ -15,4 +15,5 @@
     <string name="title_dashboard">Rewards</string>
     <string name="title_notifications">Tips</string>
     <string name="pricepersm">Enter Price Per Cigarette</string>
+    <string name="profile">Profile</string>
 </resources>
