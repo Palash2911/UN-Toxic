@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.godspeed.un_toxic.databinding.FragmentProgressBinding
@@ -38,10 +37,14 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         db.collection("Profiles").get().addOnSuccessListener {
                 result->
-            for(document in result) {
-                val money = (Integer.parseInt( document.data["Number of Smoke"].toString()))*(Integer.parseInt( document.data["Price"].toString()))
+            for(document in result){
+                val money = (((document.data["Price"]).toString()).toLong())*(((document.data["Number of Smoke"]).toString()).toLong())
                 val smokes = Integer.parseInt( document.data["Number of Smoke"].toString())
-                prolist.add(Progressdata(document.data["Name"] as String,smokes,money, 10, 22))
+                val w = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 7 * Integer.parseInt(document.data["Price"].toString())).toString()
+                val m = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 30 * Integer.parseInt(document.data["Price"].toString())).toString()
+                val h = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 182 * Integer.parseInt(document.data["Price"].toString())).toString()
+                val y = (Integer.parseInt(document.data["Number of Smoke"].toString())* 365 * Integer.parseInt(document.data["Price"].toString())).toString()
+                prolist.add(Progressdata(document.data["Name"] as String,smokes, money, 10, 22, w, m, h, y ))
                 Log.d("TAG", "${document.id} => ${document.data["price"]}")
                 break
             }
@@ -53,6 +56,5 @@ class HomeFragment : Fragment() {
             }
         prolist = arrayListOf<Progressdata>()
     }
-
 }
 

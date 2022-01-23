@@ -20,4 +20,9 @@
     <string name="rve">Rewards Earned</string>
     <string name="numberofsmokes">Cigarettes Free</string>
     <string name="lifesave">Life Saved</string>
+    <string name="bigquestion">How Much Money Saved --</string>
+    <string name="week">1 Week</string>
+    <string name="month">1 Month</string>
+    <string name="months6">6 Months</string>
+    <string name="year">1 Year</string>
 </resources>

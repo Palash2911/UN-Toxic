@@ -16,6 +16,10 @@ class Progressadapt (private var progress: ArrayList<Progressdata>) : RecyclerVi
             val noofsmoke = v.findViewById<TextView>(R.id.smokenumber)
             val tottime = v.findViewById<TextView>(R.id.totaltime)
             val reward = v.findViewById<TextView>(R.id.rewardearn)
+            val weekmon = v.findViewById<TextView>(R.id.weekmoney)
+            val monthmon = v.findViewById<TextView>(R.id.monthmoney)
+            val halfyearmon = v.findViewById<TextView>(R.id.halfyearmoney)
+            val yearmon = v.findViewById<TextView>(R.id.yearmoney)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -33,6 +37,10 @@ class Progressadapt (private var progress: ArrayList<Progressdata>) : RecyclerVi
         holder.noofsmoke.text=proitems.totcigrat.toString()
         holder.tottime.text="0"
         holder.reward.text="0"
+        holder.weekmon.text = "Rs. " + proitems.weekm
+        holder.monthmon.text = "Rs. " + proitems.monthm
+        holder.halfyearmon.text = "Rs. " + proitems.halfm
+        holder.yearmon.text = "Rs. " + proitems.yearm
     }
 
     override fun getItemCount() = progress.size

@@ -46,7 +46,7 @@ class Profile : AppCompatActivity() {
         profile["Name"] = binding.Name.text.toString()
         profile["Number"] = binding.Number.text.toString()
         profile["Number of Smoke"] = binding.numbersm.text.toString()
-        profile["Price: "] = binding.price.text.toString()
+        profile["Price"] = binding.price.text.toString()
 
         db.collection("Profiles").document(Firebase.auth.currentUser?.uid.toString())
             .set(profile).addOnCompleteListener{task->

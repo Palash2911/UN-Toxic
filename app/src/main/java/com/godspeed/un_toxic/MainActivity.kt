@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.get.setOnClickListener{sendOtp()}
         binding.verify.setOnClickListener{verifyOtp()}
     }
@@ -100,6 +101,7 @@ class MainActivity : AppCompatActivity() {
                 // The SMS quota for the project has been exceeded
                 Toast.makeText(applicationContext, "SMS Quota Reached! Contact Developer!", Toast.LENGTH_SHORT).show()
             }
+            reset()
             binding.authProgress.visibility = View.GONE
         }
 
@@ -127,7 +129,7 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
-                    val intent = Intent(this, Profile::class.java)
+                    val intent = Intent(this, Homepage::class.java)
                     startActivity(intent)
                     finish()
                 } else {
@@ -142,5 +144,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 binding.authProgress.visibility = View.GONE
             }
+    }
+
+    private fun reset (){
+        binding.phone.text.clear()
+        binding.otp.text.clear()
+        auth.signOut()
+        binding.layoutOtp.visibility = View.GONE
+        binding.layoutPhone.visibility = View.VISIBLE
     }
 }
