@@ -42,9 +42,9 @@ class Profile : AppCompatActivity() {
             binding.numbersm.error = "Number of Cigarettes Required !!"
             return
         }
-
         profile["Name"] = binding.Name.text.toString()
         profile["Number"] = binding.Number.text.toString()
+        val num = profile["Number"]
         profile["Number of Smoke"] = binding.numbersm.text.toString()
         profile["Price"] = binding.price.text.toString()
 
@@ -52,6 +52,7 @@ class Profile : AppCompatActivity() {
             .set(profile).addOnCompleteListener{task->
                 if (task.isSuccessful){
                     val intent = Intent(this, Homepage::class.java)
+                    intent.putExtra("Number", 9920063906)
                     startActivity(intent)
                 } else {
                     Log.d(TAG, "Error saving profile! ", task.exception)

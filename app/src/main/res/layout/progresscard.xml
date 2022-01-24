@@ -32,18 +32,18 @@
                 <ImageView
                     android:id="@+id/smoke"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="49dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_baseline_smoke_free_24" />
 
                 <TextView
                     android:id="@+id/smokenumber"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
-                    android:textSize="22sp" />
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/noofsmoke"
@@ -64,18 +64,18 @@
                 <ImageView
                     android:id="@+id/heal"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="49dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_baseline_healing_24" />
 
                 <TextView
                     android:id="@+id/totaltime"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
-                    android:textSize="22sp" />
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/lifesave"
@@ -231,18 +231,18 @@
                 <ImageView
                     android:id="@+id/money"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="49dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_baseline_attach_money_24" />
 
                 <TextView
                     android:id="@+id/Totalmoneysave"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
-                    android:textSize="22sp" />
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/moneyre"
@@ -263,18 +263,18 @@
                 <ImageView
                     android:id="@+id/Reward"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="49dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_baseline_auto_awesome_24" />
 
                 <TextView
                     android:id="@+id/rewardearn"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
-                    android:textSize="22sp" />
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/rewardtext"

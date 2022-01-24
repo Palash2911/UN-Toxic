@@ -25,19 +25,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        binding.layoutLoadingProfile.visibility = View.VISIBLE
-        binding.authCardView.visibility = View.GONE
         if(auth.currentUser != null){
             db.collection("Profiles").document(auth.currentUser!!.uid).get()
-                .addOnCompleteListener{task->
-                    if(task.result?.exists() == true){
+                .addOnCompleteListener{task2->
+                    if(task2.result?.exists() == true){
                         val intent = Intent(this, Homepage::class.java)
+                        intent.putExtra("Number", 9920063906)
                         startActivity(intent)
-                        finish()
                     } else {
                         val intent = Intent(this, Profile::class.java)
                         startActivity(intent)
-                        finish()
                     }
                 }
         } else {
@@ -72,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             .setCallbacks(callbacks)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
+
     }
     private fun verifyOtp(){
         if (binding.otp.text.isEmpty() || binding.otp.text.length < 6){
@@ -124,14 +122,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success")
-                    val intent = Intent(this, Homepage::class.java)
-                    startActivity(intent)
-                    finish()
+                    if(auth.currentUser != null){
+                        db.collection("Profiles").document(auth.currentUser!!.uid).get()
+                            .addOnCompleteListener{task2->
+                                if(task2.result?.exists() == true){
+                                    val intent = Intent(this, Homepage::class.java)
+                                    intent.putExtra("Number", 9920063906)
+                                    startActivity(intent)
+                                } else {
+                                    val intent = Intent(this, Profile::class.java)
+                                    intent.putExtra("Number", 9920063906)
+                                    startActivity(intent)
+                                }
+                            }
+                    } else {
+                        binding.layoutLoadingProfile.visibility = View.GONE
+                        binding.authCardView.visibility = View.VISIBLE
+                    }
                 } else {
                     // Sign in failed, display a message and update the UI
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
