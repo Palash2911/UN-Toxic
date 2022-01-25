@@ -14,7 +14,6 @@ class Progressadapt (private var progress: ArrayList<Progressdata>) : RecyclerVi
             val uname = v.findViewById<TextView>(R.id.nameuser)
             val money = v.findViewById<TextView>(R.id.Totalmoneysave)
             val noofsmoke = v.findViewById<TextView>(R.id.smokenumber)
-            val tottime = v.findViewById<TextView>(R.id.totaltime)
             val reward = v.findViewById<TextView>(R.id.rewardearn)
             val weekmon = v.findViewById<TextView>(R.id.weekmoney)
             val monthmon = v.findViewById<TextView>(R.id.monthmoney)
@@ -35,8 +34,7 @@ class Progressadapt (private var progress: ArrayList<Progressdata>) : RecyclerVi
         holder.uname.text = "Welcome " + proitems.username
         holder.money.text = proitems.totalmoney.toString()
         holder.noofsmoke.text=proitems.totcigrat.toString()
-        holder.tottime.text="0"
-        holder.reward.text="0"
+        holder.reward.text=proitems.rewardsearned.toString()
         holder.weekmon.text = "Rs. " + proitems.weekm
         holder.monthmon.text = "Rs. " + proitems.monthm
         holder.halfyearmon.text = "Rs. " + proitems.halfm
@@ -44,5 +42,4 @@ class Progressadapt (private var progress: ArrayList<Progressdata>) : RecyclerVi
     }
 
     override fun getItemCount() = progress.size
-
 }

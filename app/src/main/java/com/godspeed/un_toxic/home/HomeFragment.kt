@@ -41,9 +41,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val intent = Intent()
+
+        val intent= Intent()
         val ss:String = intent.getStringExtra("Number").toString()
         Log.d("User", ss)
+
         db.collection("Profiles").get().addOnSuccessListener {
                 result->
             for(document in result){
@@ -54,7 +56,7 @@ class HomeFragment : Fragment() {
                     val m = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 30 * Integer.parseInt(document.data["Price"].toString())).toString()
                     val h = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 183 * Integer.parseInt(document.data["Price"].toString())).toString()
                     val y = (Integer.parseInt(document.data["Number of Smoke"].toString())* 365 * Integer.parseInt(document.data["Price"].toString())).toString()
-                    prolist.add(Progressdata(document.data["Name"] as String,smokes, money, 10, 22, w, m, h, y ))
+                    prolist.add(Progressdata(document.data["Name"] as String,smokes, money, 10,w,m,h,y))
                     break
             }
             val adapter = Progressadapt(prolist)
@@ -66,4 +68,5 @@ class HomeFragment : Fragment() {
         prolist = arrayListOf<Progressdata>()
     }
 }
+
 

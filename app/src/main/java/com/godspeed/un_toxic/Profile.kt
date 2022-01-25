@@ -21,6 +21,10 @@ class Profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        val intent = Intent()
+        val ss: String = intent.getStringExtra("Number").toString()
+        Log.d("Profiles", ss)
+
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     private var storedVerificationId: String = ""
     private lateinit var binding: ActivityMainBinding
     private val db = Firebase.firestore
+    private var timerStarted = false
+    private var time = 0.0
 
     override fun onStart() {
         super.onStart()
@@ -30,7 +32,8 @@ class MainActivity : AppCompatActivity() {
                 .addOnCompleteListener{task2->
                     if(task2.result?.exists() == true){
                         val intent = Intent(this, Homepage::class.java)
-                        intent.putExtra("Number", 9920063906)
+                        val Number = "9920063906"
+                        intent.putExtra("Number", Number)
                         startActivity(intent)
                     } else {
                         val intent = Intent(this, Profile::class.java)
@@ -132,11 +135,12 @@ class MainActivity : AppCompatActivity() {
                             .addOnCompleteListener{task2->
                                 if(task2.result?.exists() == true){
                                     val intent = Intent(this, Homepage::class.java)
-                                    intent.putExtra("Number", 9920063906)
+                                    startimer()
+                                    val num = "9920063906"
+                                    intent.putExtra("Number", num)
                                     startActivity(intent)
                                 } else {
                                     val intent = Intent(this, Profile::class.java)
-                                    intent.putExtra("Number", 9920063906)
                                     startActivity(intent)
                                 }
                             }
@@ -156,6 +160,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 binding.authProgress.visibility = View.GONE
             }
+    }
+
+    private fun startimer() {
+        TODO("Not yet implemented")
     }
 
     private fun reset (){
