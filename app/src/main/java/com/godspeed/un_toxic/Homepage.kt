@@ -15,11 +15,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.godspeed.un_toxic.databinding.ActivityHomepageBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class Homepage : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomepageBinding
     private lateinit var navController: NavController
+    private val auth = FirebaseAuth.getInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,12 +32,10 @@ class Homepage : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
-
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_activity_homepage) as NavHostFragment
         navController = navHostFragment.navController
 
-        
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_progress, R.id.navigation_rewards, R.id.navigation_tips
@@ -51,16 +51,16 @@ class Homepage : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-       val intent1 = Intent(this,Profile::class.java)
+       val intent1 = Intent(this,updateprofile::class.java)
        val intent2 = Intent(this,MainActivity::class.java)
         when(item.itemId)
         {
             R.id.profile -> startActivity(intent1)
             R.id.logout ->{
-
+                auth.signOut()
                 startActivity(intent2)
                 finish()
-                 }
+            }
         }
 
         return super.onOptionsItemSelected(item)
