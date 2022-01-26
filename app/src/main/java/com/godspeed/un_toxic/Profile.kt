@@ -59,6 +59,7 @@ class Profile : AppCompatActivity() {
                     val intent = Intent(this, Homepage::class.java)
                     intent.putExtra("Number", 9920063906)
                     startActivity(intent)
+                    finish()
                     Toast.makeText(this, "Welcome Champion !! ", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.d(TAG, "Error saving profile! ", task.exception)

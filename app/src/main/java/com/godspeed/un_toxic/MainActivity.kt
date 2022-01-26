@@ -32,11 +32,13 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this, Homepage::class.java)
                         val num = "9619142911"
                         intent.putExtra("Number", num)
-                        startActivity(intent)
+                        startActivity(intent )
+                        finish()
                         Toast.makeText(this, "Welcome Back Champion !! ", Toast.LENGTH_SHORT).show()
                     } else {
                         val intent = Intent(this, Profile::class.java)
                         startActivity(intent)
+                        finish()
                     }
                 }
         } else {
@@ -135,10 +137,12 @@ class MainActivity : AppCompatActivity() {
                                     val num = "9619142911"
                                     intent.putExtra("Number", num)
                                     startActivity(intent)
+                                    finish()
                                     Toast.makeText(this, "Welcome Champion !! ", Toast.LENGTH_SHORT).show()
                                 } else {
                                     val intent = Intent(this, Profile::class.java)
                                     startActivity(intent)
+                                    finish()
                                 }
                             }
                     } else {
