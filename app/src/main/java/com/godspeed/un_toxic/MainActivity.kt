@@ -25,19 +25,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        binding.layoutLoadingProfile.visibility = View.VISIBLE
-        binding.authCardView.visibility = View.GONE
         if(auth.currentUser != null){
             db.collection("Profiles").document(auth.currentUser!!.uid).get()
-                .addOnCompleteListener{task->
-                    if(task.result?.exists() == true){
+                .addOnCompleteListener{task2->
+                    if(task2.result?.exists() == true){
                         val intent = Intent(this, Homepage::class.java)
+                        val num = "9619142911"
+                        intent.putExtra("Number", num)
                         startActivity(intent)
-                        finish()
+                        Toast.makeText(this, "Welcome Back Champion !! ", Toast.LENGTH_SHORT).show()
                     } else {
                         val intent = Intent(this, Profile::class.java)
                         startActivity(intent)
-                        finish()
                     }
                 }
         } else {
@@ -52,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.get.setOnClickListener{sendOtp()}
         binding.verify.setOnClickListener{verifyOtp()}
     }
@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity() {
             .setCallbacks(callbacks)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
+
     }
     private fun verifyOtp(){
         if (binding.otp.text.isEmpty() || binding.otp.text.length < 6){
@@ -100,6 +101,7 @@ class MainActivity : AppCompatActivity() {
                 // The SMS quota for the project has been exceeded
                 Toast.makeText(applicationContext, "SMS Quota Reached! Contact Developer!", Toast.LENGTH_SHORT).show()
             }
+            reset()
             binding.authProgress.visibility = View.GONE
         }
 
@@ -122,14 +124,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success")
-                    val intent = Intent(this, Profile::class.java)
-                    startActivity(intent)
-                    finish()
+                    if(auth.currentUser != null){
+                        db.collection("Profiles").document(auth.currentUser!!.uid).get()
+                            .addOnCompleteListener{task2->
+                                if(task2.result?.exists() == true){
+                                    val intent = Intent(this, Homepage::class.java)
+                                    val num = "9619142911"
+                                    intent.putExtra("Number", num)
+                                    startActivity(intent)
+                                    Toast.makeText(this, "Welcome Champion !! ", Toast.LENGTH_SHORT).show()
+                                } else {
+                                    val intent = Intent(this, Profile::class.java)
+                                    startActivity(intent)
+                                }
+                            }
+                    } else {
+                        binding.layoutLoadingProfile.visibility = View.GONE
+                        binding.authCardView.visibility = View.VISIBLE
+                    }
                 } else {
                     // Sign in failed, display a message and update the UI
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
@@ -142,5 +159,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 binding.authProgress.visibility = View.GONE
             }
+    }
+
+    private fun reset (){
+        binding.phone.text.clear()
+        binding.otp.text.clear()
+        auth.signOut()
+        binding.layoutOtp.visibility = View.GONE
+        binding.layoutPhone.visibility = View.VISIBLE
     }
 }

@@ -19,4 +19,23 @@
     <string name="title_home">Progress</string>
     <string name="title_dashboard">Rewards</string>
     <string name="title_notifications">Tips</string>
+
+
+    <string name="pricepersm">Enter Price Per Cigarette</string>
+    <string name="tip1">Consider yourself as a non-smoker</string>
+
+
+
+
+
+    <string name="goal">GOAL</string>
+    <string name="cost">COST</string>
+    <string name="set_the_goal">Set The Goal</string>
+    <string name="Goal">Goal</string>
+    <string name="Cost">Cost</string>
+    <string name="money_saved">Money Saved</string>
+    <string name="settings">settings</string>
+    <string name="profile">PROFILE</string>
+    <string name="logout">LOGOUT</string>
+
 </resources>

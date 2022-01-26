@@ -6,61 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <TextView
-        android:id="@+id/Nofsm"
-        android:layout_width="177dp"
-        android:layout_height="49dp"
-        android:gravity="center"
-        android:importantForAutofill="no"
-        android:minHeight="48dp"
-        android:text="@string/npds"
-        android:textColor="#0B0B0B"
-        app:layout_constraintEnd_toStartOf="@+id/numbersm"
-        app:layout_constraintHorizontal_bias="0.423"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="380dp" />
-
     <EditText
         android:id="@+id/numbersm"
-        android:layout_width="111dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="48dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:background="@null"
         android:hint="@string/enter_no"
         android:importantForAutofill="no"
-        android:inputType="phone"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="#131313"
+        android:textColorHint="#0B0A0A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Number"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="217dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:hint="@string/pricepersm"
+        android:importantForAutofill="no"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColor="#121111"
+        android:textColorHint="#171717"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck"
-        tools:layout_editor_absoluteY="380dp" />
+        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numbersm"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_width="258dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="80dp"
+        android:background="@null"
         android:hint="@string/etn"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#171717"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintHorizontal_bias="0.274"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/Number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_width="216dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="32dp"
         android:hint="@string/entp"
         android:importantForAutofill="no"
         android:inputType="phone"
         android:minHeight="48dp"
+        android:background="@null"
         android:textColorHint="#131313"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Name" />
 
@@ -70,9 +80,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:text="@string/conitnue"
+        android:textColor="#F4F4F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price"
+        app:layout_constraintVertical_bias="0.425"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

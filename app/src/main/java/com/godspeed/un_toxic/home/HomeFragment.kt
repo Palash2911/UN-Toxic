@@ -1,13 +1,12 @@
 package com.godspeed.un_toxic.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.godspeed.un_toxic.R
 import com.godspeed.un_toxic.databinding.FragmentProgressBinding
 
 class HomeFragment : Fragment() {
@@ -30,12 +29,10 @@ class HomeFragment : Fragment() {
         _binding = FragmentProgressBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
         return root
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
