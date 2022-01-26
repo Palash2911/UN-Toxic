@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f4f7fe">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/moneyview"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         app:cardCornerRadius="27dp"
+        app:cardElevation="6dp"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,9 +25,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="8dp">
 
             <ImageView
+                app:tint="@color/purple_200"
                 android:id="@+id/money"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -47,7 +52,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/money_reserved"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -55,9 +61,10 @@
         android:id="@+id/rewardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="6dp"
         app:cardCornerRadius="27dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -76,6 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+                app:tint="@color/purple_200"
                 android:src="@drawable/ic_baseline_auto_awesome_24" />
 
             <TextView
@@ -94,7 +102,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/rve"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -103,9 +112,10 @@
         android:id="@+id/smokeview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="108dp"
+        app:cardElevation="6dp"
+        android:layout_marginEnd="20dp"
         app:cardCornerRadius="27dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -123,7 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_baseline_smoke_free_24" />
+                android:src="@drawable/ic_baseline_smoke_free_24"
+                app:tint="@color/purple_200" />
 
             <TextView
                 android:id="@+id/smokenumber"
@@ -141,7 +152,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/numberofsmokes"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -152,9 +164,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
+        app:cardCornerRadius="30px"
         android:layout_marginTop="40dp"
+        app:cardElevation="6dp"
         android:layout_marginRight="18dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:padding="20dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/smokeview">
@@ -162,9 +177,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="10dp">
 
             <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -184,7 +202,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal"
+                    android:gravity="start"
+                    android:paddingLeft="5dp"
                     android:text="@string/week"
                     android:textSize="18sp" />
 
@@ -206,7 +225,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal"
+                    android:gravity="start"
+                    android:paddingLeft="5dp"
                     android:text="@string/month"
                     android:textSize="18sp" />
 
@@ -228,7 +248,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal"
+                    android:gravity="start"
+                    android:paddingLeft="5dp"
                     android:text="@string/months6"
                     android:textSize="18sp" />
 
@@ -250,7 +271,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal"
+                    android:gravity="start"
+                    android:paddingLeft="5dp"
                     android:text="@string/year"
                     android:textSize="18sp" />
 

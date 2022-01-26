@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
+
     <LinearLayout
+
         android:id="@+id/layoutLoadingProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="32dp">
 
         <ProgressBar
             android:layout_width="wrap_content"
@@ -38,29 +39,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:cardCornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:elevation="12dp"
+        android:layout_centerInParent="true"
+        app:cardElevation="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#E8E6E6">
+            android:background="@color/white"
+            >
+
 
             <LinearLayout
                 android:id="@+id/layout_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <EditText
+
                     android:id="@+id/phone"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:hint="@string/enter_your_phone_no"
@@ -68,16 +72,33 @@
                     android:inputType="phone"
                     android:textColor="#131313"
                     android:textColorHint="#121212"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/edit_text_background"/>
 
                 <Button
                     android:id="@+id/get"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/get_otp" />
+                    android:text="@string/get_otp"
+                    android:layout_marginTop="30dp"/>
 
             </LinearLayout>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lotti_otp"
+                android:layout_width="294dp"
+                android:layout_height="266dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="45dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="centerCrop"
+                app:lottie_fileName="otp.json"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
 
             <LinearLayout
                 android:id="@+id/layout_otp"
@@ -119,4 +140,4 @@
 
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

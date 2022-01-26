@@ -4,12 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".Profile"
+    android:background="#f4f7fe">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="70px"
+        android:padding="25dp"
+        app:cardElevation="12dp"
+        android:outlineAmbientShadowColor="#7090B0"
+        android:outlineSpotShadowColor="#7090B0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#E8E8E8">
+            android:background="@color/white">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -30,17 +37,18 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile"
+                    android:text="Create Profile"
                     android:textColor="@color/black"
                     android:textSize="28sp" />
-
                 <EditText
                     android:id="@+id/Name"
-                    android:layout_width="258dp"
-                    android:layout_height="55dp"
+                    android:layout_width="275dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="80dp"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/etn"
                     android:importantForAutofill="no"
@@ -54,9 +62,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:background="@drawable/edit_text_background"
                     android:id="@+id/Number"
-                    android:layout_width="216dp"
-                    android:layout_height="55dp"
+                    android:layout_width="275dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="32dp"
                     android:gravity="center"
                     android:hint="@string/entp"
@@ -71,8 +80,9 @@
                     app:layout_constraintTop_toBottomOf="parent" />
 
                 <EditText
+                    android:background="@drawable/edit_text_background"
                     android:id="@+id/numbersm"
-                    android:layout_width="250dp"
+                    android:layout_width="275dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="36dp"
                     android:gravity="center"
@@ -89,8 +99,9 @@
                     tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
                 <EditText
+                    android:background="@drawable/edit_text_background"
                     android:id="@+id/price"
-                    android:layout_width="217dp"
+                    android:layout_width="275dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="32dp"
                     android:gravity="center"
@@ -112,7 +123,9 @@
                 android:id="@+id/submitbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="64dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:gravity="center"
                 android:text="@string/conitnue"
                 android:textColor="#F4F4F4"
