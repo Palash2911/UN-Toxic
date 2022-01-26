@@ -12,7 +12,6 @@ import com.godspeed.un_toxic.home.Progressadapt.*
 
 class Progressadapt (private var progress: ArrayList<Progressdata>) : RecyclerView.Adapter<ItemViewHolder>() {
     class ItemViewHolder(v: View): RecyclerView.ViewHolder(v) {
-            val uname = v.findViewById<TextView>(R.id.nameuser)
             val money = v.findViewById<TextView>(R.id.Totalmoneysave)
             val noofsmoke = v.findViewById<TextView>(R.id.smokenumber)
             val reward = v.findViewById<TextView>(R.id.rewardearn)
@@ -32,7 +31,6 @@ class Progressadapt (private var progress: ArrayList<Progressdata>) : RecyclerVi
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val proitems=progress[position]
 
-        holder.uname.text = "Welcome " + proitems.username
         holder.money.text = proitems.totalmoney.toString()
         holder.noofsmoke.text=proitems.totcigrat.toString()
         holder.reward.text=proitems.rewardsearned.toString()

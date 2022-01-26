@@ -128,8 +128,6 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    if(auth.currentUser != null){
                         db.collection("Profiles").document(auth.currentUser!!.uid).get()
                             .addOnCompleteListener{task2->
                                 if(task2.result?.exists() == true){
@@ -144,10 +142,6 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                     } else {
-                        binding.layoutLoadingProfile.visibility = View.GONE
-                        binding.authCardView.visibility = View.VISIBLE
-                    }
-                } else {
                     // Sign in failed, display a message and update the UI
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
