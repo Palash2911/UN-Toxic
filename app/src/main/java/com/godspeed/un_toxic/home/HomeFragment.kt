@@ -36,19 +36,19 @@ class HomeFragment : Fragment() {
         prorecycle=binding.pro
         prorecycle.layoutManager= LinearLayoutManager(requireContext())
         prorecycle.setHasFixedSize(true)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val intent= Intent()
-        val ss:String = intent.getStringExtra("Number").toString()
-        Log.d("User", ss)
+        val useruid = Firebase.auth.uid.toString()
 
         db.collection("Profiles").get().addOnSuccessListener {
                 result->
             for(document in result){
+                if(document.data["Uid"]==useruid) {
                     Log.d("ID", document.toString())
                     val money = (((document.data["Price"]).toString()).toLong())*(((document.data["Number of Smoke"]).toString()).toLong())
                     val smokes = Integer.parseInt( document.data["Number of Smoke"].toString())
@@ -58,7 +58,9 @@ class HomeFragment : Fragment() {
                     val y = (Integer.parseInt(document.data["Number of Smoke"].toString())* 365 * Integer.parseInt(document.data["Price"].toString())).toString()
                     prolist.add(Progressdata(document.data["Name"] as String,smokes, money, 10,w,m,h,y))
                     break
+                }
             }
+
             val adapter = Progressadapt(prolist)
             prorecycle.adapter = adapter
         }.addOnFailureListener { exception ->

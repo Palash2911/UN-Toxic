@@ -51,6 +51,7 @@ class Profile : AppCompatActivity() {
         val num = profile["Number"]
         profile["Number of Smoke"] = binding.numbersm.text.toString()
         profile["Price"] = binding.price.text.toString()
+        profile["Uid"] = Firebase.auth.uid.toString()
 
         db.collection("Profiles").document(Firebase.auth.currentUser?.uid.toString())
             .set(profile).addOnCompleteListener{task->
@@ -58,6 +59,7 @@ class Profile : AppCompatActivity() {
                     val intent = Intent(this, Homepage::class.java)
                     intent.putExtra("Number", 9920063906)
                     startActivity(intent)
+                    Toast.makeText(this, "Welcome Champion !! ", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.d(TAG, "Error saving profile! ", task.exception)
                     Toast.makeText(applicationContext, "Something went wrong!!", Toast.LENGTH_SHORT).show()
