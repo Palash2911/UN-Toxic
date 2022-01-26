@@ -3,35 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/drawable/cardbackground.xml" value="0.27314814814814814" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.17760416666666667" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/drawable/shape_background.xml" value="0.32864583333333336" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/activity_homepage.xml" value="0.22" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/activity_main.xml" value="0.23007246376811594" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/activity_profile.xml" value="0.23007246376811594" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/add_item.xml" value="0.22146739130434784" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/fragment_progress.xml" value="0.2128623188405797" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/fragment_rewards.xml" value="0.16" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/fragment_tips.xml" value="0.2738205365402405" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/list_item.xml" value="0.16" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/layout/list_item_for_rewards.xml" value="0.25" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/menu/bottom_nav_menu.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/menu/toolbar.xml" value="0.22" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.17760416666666667" />
-        <entry key="..\:/Users/PRATIK PATIL/AndroidStudioProjects/UN-Toxic/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.17760416666666667" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/drawable/ic_baseline_auto_awesome_24.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/drawable/ic_cellular_connection.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17395833333333333" />
-        <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/activity_homepage.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/activity_homepage.xml" value="0.22" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/activity_profile.xml" value="0.22" />
+        <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/add_item.xml" value="0.1578125" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/fragment_home.xml" value="0.1578125" />
-        <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/fragment_progress.xml" value="0.1578125" />
+        <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/fragment_progress.xml" value="0.25" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/fragment_rewards.xml" value="0.1578125" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/fragment_tips.xml" value="0.1578125" />
+        <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/layout/progresscard.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1578125" />
+        <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/menu/toolbar.xml" value="0.1578125" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/Palash/Dropbox/My PC (LAPTOP-42U74MT7)/Desktop/App Dev/Projects/UN-Toxic/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.17395833333333333" />
       </map>
@@ -42,5 +30,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.16666666666666666" />
+      </ProjectState>
+    </option>
   </component>
 </project>

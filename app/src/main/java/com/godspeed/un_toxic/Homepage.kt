@@ -59,11 +59,9 @@ class Homepage : AppCompatActivity() {
             R.id.logout ->{
 
                 startActivity(intent2)
-
+                finish()
                  }
         }
-
-
 
         return super.onOptionsItemSelected(item)
     }
