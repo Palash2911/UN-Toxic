@@ -84,10 +84,10 @@ class DashboardFragment : Fragment() {
                 val userData = UserData(goal,cost,"0");
                 userList.add(userData)
                 database.collection("/Profiles/"+FirebaseAuth.getInstance().uid.toString()+"/Goals").document(goal).set(userData).addOnSuccessListener {
-                    Toast.makeText(context , "Added to Database" , Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context , "Goal ADDED !! " , Toast.LENGTH_SHORT).show()
                 }
                 userAdapter.notifyDataSetChanged()
-                Toast.makeText(requireContext(),"Adding User Information Success",Toast.LENGTH_SHORT).show()
+
                 dialog.dismiss()
             }
             addDialog.setNegativeButton("Cancel"){

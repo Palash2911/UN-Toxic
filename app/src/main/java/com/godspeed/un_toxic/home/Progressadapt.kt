@@ -2,6 +2,8 @@ package com.godspeed.un_toxic.home
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +13,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.godspeed.un_toxic.EffectActivity
 import com.godspeed.un_toxic.R
 import com.godspeed.un_toxic.dashboard.UserData
 import com.godspeed.un_toxic.home.Progressadapt.*
@@ -30,6 +34,7 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
         val halfyearmon = v.findViewById<TextView>(R.id.halfyearmoney)
         val yearmon = v.findViewById<TextView>(R.id.yearmoney)
         val addFunds = v.findViewById<Button>(R.id.addFunds);
+        val effectbtn = v.findViewById<Button>(R.id.effectbtn)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -50,6 +55,12 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
         holder.monthmon.text = "Rs. " + proitems.monthm
         holder.halfyearmon.text = "Rs. " + proitems.halfm
         holder.yearmon.text = "Rs. " + proitems.yearm
+
+        holder.effectbtn.setOnClickListener {
+            Toast.makeText(this.context, "Press Back Button To Return To HomePage", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this.context, EffectActivity::class.java)
+            startActivity(this.context, intent, Bundle())
+        }
 
         holder.addFunds.setOnClickListener{
             val inflter = LayoutInflater.from(context)
