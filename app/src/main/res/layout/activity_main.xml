@@ -65,8 +65,8 @@
                     android:hint="@string/enter_your_phone_no"
                     android:importantForAutofill="no"
                     android:inputType="phone"
-                    android:textColor="#131313"
-                    android:textColorHint="#121212"
+                    android:textColorHint="@color/grey"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:layout_marginRight="25dp"
                     android:layout_marginTop="30dp"
@@ -111,8 +111,8 @@
                     android:hint="@string/enter_otp"
                     android:importantForAutofill="no"
                     android:inputType="number"
-                    android:textColor="#131313"
-                    android:textColorHint="#121212"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
                     android:textSize="20sp"
                     tools:layout_editor_absoluteX="314dp" />
 

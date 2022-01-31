@@ -40,6 +40,83 @@
     <string name="tip5">Don\'t mistake pleasure for Happiness, after all salt and sugar look the same.</string>
     <string name="tip6">You are Fool if you think smoking is Cool</string>
     <string name="tip7">Health and Wealth after you start smoking - Save Us today and We\'ll save you later</string>
-    <string name="tip8">Every year 8 million people leave smoking, not because they quit on smoking, but because life quits on them</string>
-    <string name="btneffect">Click here to See Effect of Smoking</string>
+    <string name="tip8"><b>Every year 8 million people leave smoking, not because they quit on smoking, but because life quits on them</b></string>
+    <string name="btneffect">EFFECTS OF SMOKING</string>
+
+
+
+
+    <string name="affirmation1"><b>There are no proven ways to reverse the clock, but there is one known way to look older than your years,
+        start smoking. Smoking can change your appearance by altering your teeth, hair, and skin. Aside from your appearance, smoking weakens your heart,
+        lungs, and bones; and reduces fertility.
+        Look at these two photos. One of these identical twins is a smoker; the other is not. Can you spot the difference?</b></string>
+
+
+    <string name="affirmation2">Oral cancer risk is also elevated in people who smoke or use smokeless tobacco.
+        Adding alcohol to the mix intensifies this risk; those who smoke and are heavy drinkers have a 15-fold increased risk of oral cancer.
+        Oral cancer usually starts as a sore inside the mouth that wont go away. Quitting smoking lowers the risk of oral cancer.</string>
+
+
+    <string name="affirmation3">Nine out of every 10 deaths from lung cancer are due to smoking, meaning that 90% of lung cancer deaths could be prevented.
+        Smoking causes other lung problems, like emphysema, and increases the risk of contracting pneumonia.</string>
+
+
+    <string name="affirmation4">While the effects of smoking on the lungs are widely understood,
+        it might surprise some smokers to know that they are also damaging their bones. Smoking raises the risk of osteoporosis and fractures.
+        Fractures of the spine can cause an abnormal curvature and "hunchback" appearance.</string>
+
+
+
+    <string name="affirmation5">The outside eye wrinkles affectionately termed "crows feet" develop earlier in smokers than in nonsmokers.
+        These wrinkles also tend to be deeper in those who smoke. Squinting to keep smoke out of your eyes only worsens the tendency to develop wrinkles around the eyes.
+        On top of all this, there is damage to the internal skin components because of the lack of nutrient and oxygen delivery to the skin.</string>
+
+
+    <string name="affirmation6">Yellow teeth are an obvious sign of smoking.
+        But smokers experience other oral and dental problems as well. Gum disease,
+        bad breath, and tooth loss are all more common in people who smoke.
+
+</string>
+
+
+    <string name="affirmation7">Smoking can worsen the natural process of hair thinning that occurs as we age.
+        Some research shows that baldness is more common in men who smoke;
+        studies from Taiwan show that male-pattern baldness risk increases in Asian men who smoke.</string>
+
+
+    <string name="affirmation8">Tobacco stains the skin of the nails and hands. This can be a telltale
+        sign of a chronic smoker. Fortunately, this discoloration usually fades after you have stopped smoking.</string>
+
+
+    <string name="affirmation9">Cataracts are opaque areas on the lens of the eye that interfere with vision.
+        Effective treatment can mean that surgery is required. Smoking increases the likelihood that you will develop cataracts.</string>
+
+
+    <string name="affirmation10">Smokers also have an increased risk of getting psoriasis, an unsightly and often uncomfortable skin condition.
+        Psoriasis is characterized by thick, scaly skin patches that are most commonly seen on the elbows, scalp, hands, back, or feet.</string>
+
+    <string name="affirmation11">
+        Narrowing of the coronary arteries of the heart is one of the most dangerous consequences of smoking.
+        Since smoking also raises blood pressure and makes blood more likely to clot, the risk of a heart attack is dramatically increased.
+        Smoking can also affect blood flow in other ways. Erectile dysfunction is one consequence of altered blood flow in men who smoke.
+
+    </string>
+
+
+    <string name="title">TITLE</string>
+    <string name="title1"><b>Which Twin Smokes?</b></string>
+    <string name="title2"><b>Oral Cancer</b></string>
+    <string name="title3"><b>Lung Cancer</b></string>
+    <string name="title4"><b>Brittle BonesO</b></string>
+    <string name="title5"><b>Eye Wrinkles (Crow Feet)</b></string>
+    <string name="title6"><b>Damaged Gums and Teeth</b></string>
+    <string name="title7"><b>Hair Loss</b></string>
+
+    <string name="title8"><b>Damaged Gums and Teeth</b></string>
+    <string name="title9"><b>Cataracts</b></string>
+    <string name="title10"><b>Psoriasis</b></string>
+    <string name="title11"><b>Heart Disease and ED</b></string>
+    <string name="update_profile">Update Profile</string>
+
+
 </resources>
