@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.godspeed.un_toxic.EffectActivity
 import com.godspeed.un_toxic.R
 import com.godspeed.un_toxic.dashboard.UserData
 import com.godspeed.un_toxic.home.Progressadapt.*
@@ -55,7 +56,7 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
         holder.yearmon.text = "Rs. " + proitems.yearm
 
         holder.effectbtn.setOnClickListener {
-            val intent = Intent(context, updateprofile::class.java)
+            val intent = Intent(context, EffectActivity::class.java)
             startActivity(context, intent, Bundle())
         }
         holder.addFunds.setOnClickListener {
