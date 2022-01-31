@@ -10,10 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNToxic">
         <activity
+<<<<<<< HEAD
             android:name=".SplashActivity"
             android:exported="false" >
 
         </activity>
+=======
+            android:name=".updateprofile"
+            android:exported="false" />
+>>>>>>> 4af73d02ced82d41c752b47ed5814c153e18b997
         <activity
             android:name=".Homepage"
             android:exported="true"

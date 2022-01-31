@@ -4,15 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.Toast
 import com.godspeed.un_toxic.databinding.ActivityProfileBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class Profile : AppCompatActivity() {
-
+class updateprofile : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
     private val TAG = "Profiles"
     private val db = Firebase.firestore
@@ -20,10 +18,6 @@ class Profile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-
-        val intent = Intent()
-        val ss: String = intent.getStringExtra("Number").toString()
-        Log.d("Profiles", ss)
 
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -48,23 +42,21 @@ class Profile : AppCompatActivity() {
         }
         profile["Name"] = binding.Name.text.toString()
         profile["Number"] = binding.Number.text.toString()
-        val num = profile["Number"]
         profile["Number of Smoke"] = binding.numbersm.text.toString()
         profile["Price"] = binding.price.text.toString()
         profile["Uid"] = Firebase.auth.uid.toString()
 
         db.collection("Profiles").document(Firebase.auth.currentUser?.uid.toString())
-            .set(profile).addOnCompleteListener{task->
+            .update(profile as Map<String, Any>).addOnCompleteListener{ task->
                 if (task.isSuccessful){
                     val intent = Intent(this, Homepage::class.java)
-                    intent.putExtra("Number", 9920063906)
                     startActivity(intent)
                     finish()
-                    Toast.makeText(this, "Welcome Champion !! ", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Profile Updated Successfully", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.d(TAG, "Error saving profile! ", task.exception)
                     Toast.makeText(applicationContext, "Something went wrong!!", Toast.LENGTH_SHORT).show()
                 }
             }
-        }
-   }
+    }
+}
