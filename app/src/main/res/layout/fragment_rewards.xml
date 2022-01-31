@@ -20,15 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="50dp" />
-
-        <TextView
-            android:id="@+id/goalstextview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="ADD GOALS TO GET STARTED"
-            android:textSize="20sp" />
-
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

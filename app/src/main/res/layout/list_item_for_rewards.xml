@@ -8,42 +8,54 @@
     app:cardMaxElevation="5dp"
     android:layout_margin="10dp"
     >
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
         <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="15dp"
-            android:padding="4dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/mTitle"
-                android:text="@string/Goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-                android:textSize="19sp"
-                android:textStyle="bold"
-                android:layout_margin="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/mSubTitle"
-                android:text="@string/Cost"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:layout_margin="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="200dp"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:scaleY="3"/>
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/mTitle"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:text="@string/Goal"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/mSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:text="@string/Cost"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:scaleY="3" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

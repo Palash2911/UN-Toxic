@@ -2,6 +2,7 @@ package com.godspeed.un_toxic.dashboard
 
 
 import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.godspeed.un_toxic.R
+import org.w3c.dom.Text
 
 class UserAdapter(val c: DashboardFragment, val userList:ArrayList<UserData>):RecyclerView.Adapter<UserAdapter.UserViewHolder>(){
 
@@ -33,6 +35,7 @@ class UserAdapter(val c: DashboardFragment, val userList:ArrayList<UserData>):Re
         holder.goal.text=newlist.usergoal
         holder.cost.text=newlist.usercost.toString()
         var progress:Int;
+        Log.d("User size", itemCount.toString())
         if(Integer.parseInt(newlist.saved)>0){
            progress = (((Integer.parseInt(newlist.saved))/(Integer.parseInt(newlist.usercost)))*100) as Int
         }
@@ -43,7 +46,7 @@ class UserAdapter(val c: DashboardFragment, val userList:ArrayList<UserData>):Re
         holder.progressBar.setProgress(progress,true);
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount() : Int{
         return userList.size
     }
 
