@@ -14,7 +14,10 @@ import com.google.firebase.auth.*
 import com.google.firebase.auth.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.ktx.messaging
 import java.util.concurrent.TimeUnit
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "Login"
@@ -22,24 +25,29 @@ class MainActivity : AppCompatActivity() {
     private var storedVerificationId: String = ""
     private lateinit var binding: ActivityMainBinding
     private val db = Firebase.firestore
+    private lateinit var  messaging:FirebaseMessaging
 
     override fun onStart() {
         super.onStart()
-        binding.layoutLoadingProfile.visibility = View.VISIBLE
-        binding.authCardView.visibility = View.GONE
+        messaging = FirebaseMessaging.getInstance();
         if(auth.currentUser != null){
+            binding.layoutLoadingProfile.visibility = View.VISIBLE
+            binding.authCardView.visibility = View.GONE
             db.collection("Profiles").document(auth.currentUser!!.uid).get()
-                .addOnCompleteListener{task->
-                    if(task.result?.exists() == true){
+                .addOnCompleteListener{task2->
+                    if(task2.result?.exists() == true){
                         val intent = Intent(this, Homepage::class.java)
+                        val num = "9619142911"
+                        intent.putExtra("Number", num)
                         startActivity(intent)
                         finish()
+                        Toast.makeText(this, "Welcome Back Champion !! ", Toast.LENGTH_SHORT).show()
                     } else {
                         val intent = Intent(this, Profile::class.java)
                         startActivity(intent)
                         finish()
                     }
-                }
+        }
         } else {
             binding.layoutLoadingProfile.visibility = View.GONE
             binding.authCardView.visibility = View.VISIBLE
@@ -52,6 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.get.setOnClickListener{sendOtp()}
         binding.verify.setOnClickListener{verifyOtp()}
     }
@@ -71,6 +80,7 @@ class MainActivity : AppCompatActivity() {
             .setCallbacks(callbacks)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
+
     }
     private fun verifyOtp(){
         if (binding.otp.text.isEmpty() || binding.otp.text.length < 6){
@@ -88,6 +98,9 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "onVerificationCompleted: $credential")
             binding.authProgress.visibility = View.GONE
             binding.layoutPhone.visibility = View.GONE
+            Firebase.messaging.subscribeToTopic("all").addOnSuccessListener {
+                Log.e("","Added to notification list");
+            }
             signInWithPhoneAuthCredential(credential)
         }
 
@@ -100,6 +113,7 @@ class MainActivity : AppCompatActivity() {
                 // The SMS quota for the project has been exceeded
                 Toast.makeText(applicationContext, "SMS Quota Reached! Contact Developer!", Toast.LENGTH_SHORT).show()
             }
+            reset()
             binding.authProgress.visibility = View.GONE
         }
 
@@ -122,15 +136,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success")
-                    val intent = Intent(this, Profile::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
+                        db.collection("Profiles").document(auth.currentUser!!.uid).get()
+                            .addOnCompleteListener{task2->
+                                if(task2.result?.exists() == true){
+                                    val intent = Intent(this, Homepage::class.java)
+                                    val num = "9619142911"
+                                    intent.putExtra("Number", num)
+                                    startActivity(intent)
+                                    finish()
+                                    Toast.makeText(this, "Welcome Champion !! ", Toast.LENGTH_SHORT).show()
+                                } else {
+                                    val intent = Intent(this, Profile::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                            }
+                    } else {
                     // Sign in failed, display a message and update the UI
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
@@ -142,5 +167,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 binding.authProgress.visibility = View.GONE
             }
+    }
+
+    private fun reset (){
+        binding.phone.text.clear()
+        binding.otp.text.clear()
+        auth.signOut()
+        binding.layoutOtp.visibility = View.GONE
+        binding.layoutPhone.visibility = View.VISIBLE
     }
 }

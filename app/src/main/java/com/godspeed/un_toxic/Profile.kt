@@ -21,6 +21,10 @@ class Profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        val intent = Intent()
+        val ss: String = intent.getStringExtra("Number").toString()
+        Log.d("Profiles", ss)
+
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -42,17 +46,22 @@ class Profile : AppCompatActivity() {
             binding.numbersm.error = "Number of Cigarettes Required !!"
             return
         }
-
         profile["Name"] = binding.Name.text.toString()
         profile["Number"] = binding.Number.text.toString()
+        val num = profile["Number"]
         profile["Number of Smoke"] = binding.numbersm.text.toString()
-        profile["Price: "] = binding.price.text.toString()
+        profile["Price"] = binding.price.text.toString()
+        profile["IntialPrice"] = binding.price.text.toString()
+        profile["Uid"] = Firebase.auth.uid.toString()
 
         db.collection("Profiles").document(Firebase.auth.currentUser?.uid.toString())
             .set(profile).addOnCompleteListener{task->
                 if (task.isSuccessful){
                     val intent = Intent(this, Homepage::class.java)
+                    intent.putExtra("Number", 9920063906)
                     startActivity(intent)
+                    finish()
+                    Toast.makeText(this, "Welcome Champion !! ", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.d(TAG, "Error saving profile! ", task.exception)
                     Toast.makeText(applicationContext, "Something went wrong!!", Toast.LENGTH_SHORT).show()
