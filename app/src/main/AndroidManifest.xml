@@ -10,24 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNToxic">
         <activity
-<<<<<<< HEAD
             android:name=".SplashActivity"
-            android:exported="false" >
-
-        </activity>
-=======
-            android:name=".updateprofile"
-            android:exported="false" />
->>>>>>> 4af73d02ced82d41c752b47ed5814c153e18b997
-        <activity
-            android:name=".Homepage"
-            android:exported="true"
-            android:label="@string/title_activity_homepage">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+            <activity android:name=".updateprofile"
+                android:exported="false"/>
+
+        <activity
+            android:name=".Homepage"
+            android:exported="false"
+            android:label="@string/title_activity_homepage">
+
         </activity>
         <activity
             android:name=".Profile"

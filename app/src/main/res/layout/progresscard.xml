@@ -54,8 +54,20 @@
                 android:text="@string/money_reserved"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>
+
+            <Button
+                android:id="@+id/addFunds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/white"
+                android:text="ADD FUNDS +"
+                android:layout_marginTop="15dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/rewardview"
@@ -108,56 +120,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/smokeview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        app:cardElevation="6dp"
-        android:layout_marginEnd="20dp"
-        app:cardCornerRadius="27dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rewardview">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/smoke"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_baseline_smoke_free_24"
-                app:tint="@color/purple_200" />
-
-            <TextView
-                android:id="@+id/smokenumber"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/noofsmoke"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="@string/numberofsmokes"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/savedmoneyview"
@@ -172,7 +135,7 @@
         android:padding="20dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/smokeview">
+        app:layout_constraintTop_toBottomOf="@id/rewardview">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -199,7 +162,7 @@
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
@@ -222,7 +185,7 @@
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
@@ -232,7 +195,7 @@
 
                 <TextView
                     android:id="@+id/monthmoney"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_horizontal" />
@@ -245,7 +208,7 @@
 
                 <TextView
                     android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="start"

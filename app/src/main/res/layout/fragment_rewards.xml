@@ -25,6 +25,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addingBtn"
+        android:backgroundTint="@color/purple_200"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -32,6 +33,6 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="80dp"
         android:src="@drawable/ic_baseline_add_24"
-        app:tint="@color/white" />
+        app:tint="@color/black" />
 
 </RelativeLayout>

@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.godspeed.un_toxic.R
 import com.godspeed.un_toxic.databinding.FragmentRewardsBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class DashboardFragment : Fragment() {
@@ -23,6 +25,8 @@ class DashboardFragment : Fragment() {
     private lateinit var recv: RecyclerView
     private lateinit var userList:ArrayList<UserData>
     private lateinit var userAdapter:UserAdapter
+    private lateinit var database:FirebaseFirestore
+    private lateinit var auth:FirebaseAuth
 
 
     override fun onCreateView(
@@ -32,6 +36,8 @@ class DashboardFragment : Fragment() {
     ): View {
         dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
         _binding = FragmentRewardsBinding.inflate(inflater, container, false)
+        database = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance();
         return binding.root
     }
 
@@ -50,6 +56,14 @@ class DashboardFragment : Fragment() {
         /**setRecycler view Adapter*/
         recv.layoutManager = LinearLayoutManager(requireContext())
         recv.adapter = userAdapter
+
+        database.collection("Profiles/"+FirebaseAuth.getInstance().uid.toString()+"/Goals").get().addOnSuccessListener { snapshot ->
+            for(goal in snapshot){
+                val userData =  UserData(goal.data["usergoal"] as String, goal.data["usercost"] as String,goal.data["saved"] as String);
+                userList.add(userData);
+            }
+            userAdapter.notifyDataSetChanged();
+           }
 
 
         /**set Dialog*/
@@ -72,8 +86,12 @@ class DashboardFragment : Fragment() {
             addDialog.setPositiveButton("Ok"){
                     dialog,_->
                 val goal = Goal.text.toString()
-                val cost = Cost.text.toString()
-                userList.add(UserData("Goal: $goal"," Cost. : $cost"))
+                val cost = (Cost.text.toString()) ;
+                val userData = UserData(goal,cost,"0");
+                userList.add(userData)
+                database.collection("/Profiles/"+FirebaseAuth.getInstance().uid.toString()+"/Goals").document(goal).set(userData).addOnSuccessListener {
+                    Toast.makeText(context , "Added to Database" , Toast.LENGTH_SHORT).show()
+                }
                 userAdapter.notifyDataSetChanged()
                 Toast.makeText(requireContext(),"Adding User Information Success",Toast.LENGTH_SHORT).show()
                 dialog.dismiss()
@@ -82,7 +100,6 @@ class DashboardFragment : Fragment() {
                     dialog,_->
                 dialog.dismiss()
                 Toast.makeText(requireContext(),"Cancel",Toast.LENGTH_SHORT).show()
-
             }
             addDialog.create()
             addDialog.show()

@@ -30,6 +30,7 @@ class Homepage : AppCompatActivity() {
         binding = ActivityHomepageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val navView: BottomNavigationView = binding.navView
 
         val navHostFragment = supportFragmentManager
@@ -55,7 +56,7 @@ class Homepage : AppCompatActivity() {
        val intent2 = Intent(this,MainActivity::class.java)
         when(item.itemId)
         {
-            R.id.profile -> startActivity(intent1)
+            R.id.profile -> {startActivity(intent1)}
             R.id.logout ->{
                 auth.signOut()
                 startActivity(intent2)

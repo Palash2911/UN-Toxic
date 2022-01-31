@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".updateprofile">
+    tools:context=".updateprofile"
+    android:background="#f4f7fe">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -32,15 +33,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile"
+                    android:text="Update Profile"
                     android:textColor="@color/black"
                     android:textSize="28sp" />
 
                 <EditText
                     android:id="@+id/Name"
-                    android:layout_width="258dp"
-                    android:layout_height="55dp"
+                    android:layout_width="275dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="80dp"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/etn"
                     android:importantForAutofill="no"
@@ -55,9 +57,10 @@
 
                 <EditText
                     android:id="@+id/Number"
-                    android:layout_width="216dp"
-                    android:layout_height="55dp"
+                    android:layout_width="275dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="32dp"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/entp"
                     android:importantForAutofill="no"
@@ -72,9 +75,10 @@
 
                 <EditText
                     android:id="@+id/numbersm"
-                    android:layout_width="250dp"
+                    android:layout_width="275dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/enter_no"
                     android:importantForAutofill="no"
@@ -90,9 +94,10 @@
 
                 <EditText
                     android:id="@+id/price"
-                    android:layout_width="217dp"
+                    android:layout_width="275dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="32dp"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/pricepersm"
                     android:importantForAutofill="no"
@@ -112,7 +117,9 @@
                 android:id="@+id/submitbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="64dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:gravity="center"
                 android:text="@string/conitnue"
                 android:textColor="#F4F4F4"
