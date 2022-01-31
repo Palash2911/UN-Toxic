@@ -35,6 +35,7 @@
                     android:background="@drawable/cardbackground"
                     android:gravity="center"
                     android:text="@string/tip2"
+                    android:textColor="#EAE6E6"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -55,6 +56,7 @@
                     android:gravity="center"
                     android:text="@string/tip1"
 
+                    android:textColor="#EAE6E6"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -74,6 +76,7 @@
                     android:gravity="center"
                     android:text="@string/tip3"
 
+                    android:textColor="#EAE6E6"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -94,6 +97,7 @@
                     android:gravity="center"
                     android:text="@string/tips4"
 
+                    android:textColor="#EAE6E6"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -113,6 +117,7 @@
                     android:gravity="center"
                     android:text="@string/tip5"
 
+                    android:textColor="#EAE6E6"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -132,6 +137,7 @@
                     android:gravity="center"
                     android:text="@string/tip6"
 
+                    android:textColor="#EAE6E6"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -151,6 +157,7 @@
                     android:gravity="center"
                     android:text="@string/tip7"
 
+                    android:textColor="#EAE6E6"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -170,6 +177,7 @@
                     android:gravity="center"
                     android:text="@string/tip8"
 
+                    android:textColor="#EAE6E6"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>

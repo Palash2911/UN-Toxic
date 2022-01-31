@@ -45,6 +45,14 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if(userAdapter.itemCount ==0)
+        {
+            binding.goalstextview.visibility=View.VISIBLE
+        }
+        else
+        {
+            binding.goalstextview.visibility=View.VISIBLE
+        }
         userList = ArrayList()
         /**set find Id*/
         addsBtn = view.findViewById(R.id.addingBtn)
