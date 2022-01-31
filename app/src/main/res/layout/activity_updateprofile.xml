@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".updateprofile"
-    android:background="#f4f7fe">
+    tools:context=".updateprofile">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -33,7 +32,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Update Profile"
+                    android:text="@string/update_profile"
                     android:textColor="@color/black"
                     android:textSize="28sp" />
 
@@ -48,8 +47,7 @@
                     android:importantForAutofill="no"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textColor="#131313"
-                    android:textColorHint="#171717"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.274"
                     app:layout_constraintStart_toStartOf="parent"
@@ -66,8 +64,7 @@
                     android:importantForAutofill="no"
                     android:inputType="phone"
                     android:minHeight="48dp"
-                    android:textColor="#131313"
-                    android:textColorHint="#171717"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.215"
                     app:layout_constraintStart_toStartOf="parent"
@@ -84,8 +81,6 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:minHeight="48dp"
-                    android:textColor="#131313"
-                    android:textColorHint="#0B0A0A"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.26"
                     app:layout_constraintStart_toStartOf="parent"
@@ -103,8 +98,7 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:minHeight="48dp"
-                    android:textColor="#131313"
-                    android:textColorHint="#171717"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.221"
                     app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +116,7 @@
                 android:layout_marginRight="25dp"
                 android:gravity="center"
                 android:text="@string/conitnue"
-                android:textColor="#F4F4F4"
+                android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
 
         </LinearLayout>

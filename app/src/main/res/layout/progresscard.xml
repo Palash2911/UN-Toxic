@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4f7fe">
+   >
 
 
     <Button
@@ -12,12 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/btneffect"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/savedmoneyview"
-        tools:ignore="TextContrastCheck" />
+         />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/moneyview"
@@ -25,9 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
+        android:background="#D7D6D6"
         android:layout_marginRight="20dp"
         android:padding="5dp"
-        app:cardCornerRadius="27dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -88,7 +91,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        app:cardCornerRadius="27dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -100,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+
             android:orientation="vertical">
 
             <ImageView
@@ -138,10 +142,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="18dp"
         android:padding="20dp"
-        app:cardCornerRadius="30px"
+        app:cardCornerRadius="10dp"
         app:cardElevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -177,13 +181,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:paddingLeft="5dp"
+
                     android:text="@string/week"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/weekmoney"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
+                    android:textSize="18sp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_horizontal" />
@@ -200,7 +205,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:paddingLeft="5dp"
+
                     android:text="@string/month"
                     android:textSize="18sp" />
 
@@ -209,6 +214,7 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:textSize="18sp"
                     android:gravity="center_horizontal" />
             </LinearLayout>
 
@@ -223,15 +229,15 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:paddingLeft="5dp"
                     android:text="@string/months6"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/halfyearmoney"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:textSize="18sp"
                     android:gravity="center_horizontal" />
             </LinearLayout>
 
@@ -246,15 +252,15 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:paddingLeft="5dp"
                     android:text="@string/year"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/yearmoney"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:textSize="18sp"
                     android:gravity="center_horizontal" />
             </LinearLayout>
         </LinearLayout>

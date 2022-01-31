@@ -40,16 +40,16 @@
     <string name="tip5">Don\'t mistake pleasure for Happiness, after all salt and sugar look the same.</string>
     <string name="tip6">You are Fool if you think smoking is Cool</string>
     <string name="tip7">Health and Wealth after you start smoking - Save Us today and We\'ll save you later</string>
-    <string name="tip8">Every year 8 million people leave smoking, not because they quit on smoking, but because life quits on them</string>
-    <string name="btneffect">Click here to See Effect of Smoking</string>
+    <string name="tip8"><b>Every year 8 million people leave smoking, not because they quit on smoking, but because life quits on them</b></string>
+    <string name="btneffect">EFFECTS OF SMOKING</string>
 
 
 
 
-    <string name="affirmation1">There are no proven ways to reverse the clock, but there is one known way to look older than your years,
+    <string name="affirmation1"><b>There are no proven ways to reverse the clock, but there is one known way to look older than your years,
         start smoking. Smoking can change your appearance by altering your teeth, hair, and skin. Aside from your appearance, smoking weakens your heart,
         lungs, and bones; and reduces fertility.
-        Look at these two photos. One of these identical twins is a smoker; the other is not. Can you spot the difference?</string>
+        Look at these two photos. One of these identical twins is a smoker; the other is not. Can you spot the difference?</b></string>
 
 
     <string name="affirmation2">Oral cancer risk is also elevated in people who smoke or use smokeless tobacco.
@@ -116,10 +116,7 @@
     <string name="title9"><b>Cataracts</b></string>
     <string name="title10"><b>Psoriasis</b></string>
     <string name="title11"><b>Heart Disease and ED</b></string>
-
-
-
-
+    <string name="update_profile">Update Profile</string>
 
 
 </resources>

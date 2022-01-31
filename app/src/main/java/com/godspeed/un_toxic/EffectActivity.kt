@@ -9,6 +9,7 @@ class EffectActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_effect)
+        supportActionBar?.setTitle("EFFECTS OF SMOKING")
 
         val myDataset = DataSourceClass().loadIimages()
 

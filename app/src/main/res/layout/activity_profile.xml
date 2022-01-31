@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile"
-    android:background="#f4f7fe">
+  >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -47,6 +47,8 @@
                     android:id="@+id/Name"
                     android:layout_width="275dp"
                     android:layout_height="50dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
                     android:layout_marginTop="80dp"
                     android:background="@drawable/edit_text_background"
                     android:gravity="center"
@@ -54,8 +56,7 @@
                     android:importantForAutofill="no"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textColor="#131313"
-                    android:textColorHint="#171717"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.274"
                     app:layout_constraintStart_toStartOf="parent"
@@ -66,14 +67,15 @@
                     android:id="@+id/Number"
                     android:layout_width="275dp"
                     android:layout_height="50dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
                     android:layout_marginTop="32dp"
                     android:gravity="center"
                     android:hint="@string/entp"
                     android:importantForAutofill="no"
                     android:inputType="phone"
                     android:minHeight="48dp"
-                    android:textColor="#131313"
-                    android:textColorHint="#171717"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.215"
                     app:layout_constraintStart_toStartOf="parent"
@@ -85,13 +87,14 @@
                     android:layout_width="275dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="36dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
                     android:gravity="center"
                     android:hint="@string/enter_no"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:minHeight="48dp"
-                    android:textColor="#131313"
-                    android:textColorHint="#0B0A0A"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.26"
                     app:layout_constraintStart_toStartOf="parent"
@@ -104,13 +107,14 @@
                     android:layout_width="275dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="32dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
                     android:gravity="center"
                     android:hint="@string/pricepersm"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:minHeight="48dp"
-                    android:textColor="#131313"
-                    android:textColorHint="#171717"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.221"
                     app:layout_constraintStart_toStartOf="parent"
@@ -128,7 +132,7 @@
                 android:layout_marginRight="25dp"
                 android:gravity="center"
                 android:text="@string/conitnue"
-                android:textColor="#F4F4F4"
+                android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
