@@ -63,11 +63,7 @@ class DashboardFragment : Fragment() {
             userAdapter.notifyDataSetChanged();
            }
 
-
-        /**set Dialog*/
         addsBtn.setOnClickListener { addInfo()}
-
-
     }
 
 

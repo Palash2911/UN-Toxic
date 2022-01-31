@@ -21,6 +21,7 @@ import com.godspeed.un_toxic.Homepage
 import com.godspeed.un_toxic.Profile
 import com.godspeed.un_toxic.R
 import com.godspeed.un_toxic.updateprofile
+import com.google.firebase.auth.FirebaseAuth
 
 
 class HomeFragment : Fragment() {
@@ -60,7 +61,22 @@ class HomeFragment : Fragment() {
                     val m = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 30 * Integer.parseInt(document.data["Price"].toString())).toString()
                     val h = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 183 * Integer.parseInt(document.data["Price"].toString())).toString()
                     val y = (Integer.parseInt(document.data["Number of Smoke"].toString())* 365 * Integer.parseInt(document.data["Price"].toString())).toString()
-                    prolist.add(Progressdata(smokes, money, 10,w,m,h,y))
+                    var rew:Long = 0
+                    db.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
+                        .collection("Goals").get().addOnSuccessListener { res->
+                            for(documents in res) {
+                                val save = documents.data["saved"].toString().toLong()
+                                val cos = documents.data["usercost"].toString().toLong()
+                                if(save>=cos)
+                                {
+                                    rew++;
+                                }
+                            }
+                        }.addOnFailureListener {
+                            rew=0
+                        }
+                    Log.d("Progress", rew.toString())
+                    prolist.add(Progressdata(smokes, money, rew+1,w,m,h,y))
                     break
                 }
             }

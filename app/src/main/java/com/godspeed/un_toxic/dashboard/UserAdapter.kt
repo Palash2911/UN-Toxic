@@ -25,8 +25,6 @@ class UserAdapter(val c: DashboardFragment, val userList:ArrayList<UserData>):Re
         val inflater=LayoutInflater.from(parent.context)
         val v=inflater.inflate(R.layout.list_item_for_rewards,parent,false)
         return UserViewHolder(v)
-
-
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -43,9 +41,6 @@ class UserAdapter(val c: DashboardFragment, val userList:ArrayList<UserData>):Re
         }
 
         holder.progressBar.setProgress(progress,true);
-
-
-
     }
 
     override fun getItemCount(): Int {

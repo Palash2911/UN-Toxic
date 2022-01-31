@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     android:background="#f4f7fe">
 
-
     <Button
         android:id="@+id/effectbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="1dp"
         android:text="@string/btneffect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -27,6 +26,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
         android:padding="5dp"
+        android:background="#FFFFFF"
         app:cardCornerRadius="27dp"
         app:cardElevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +39,7 @@
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:orientation="vertical">
 
             <ImageView
@@ -89,6 +90,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         app:cardCornerRadius="27dp"
+        android:background="#FFFFFF"
         app:cardElevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -143,6 +145,7 @@
         android:padding="20dp"
         app:cardCornerRadius="30px"
         app:cardElevation="6dp"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

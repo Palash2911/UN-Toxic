@@ -22,10 +22,10 @@
     <string name="pricepersm">Price Per Cigratte</string>
     <string name="tip1">Constant Changes Required</string>
     <string name="set_the_goal">Set Goal</string>
-    <string name="Goal">Goal</string>
-    <string name="Cost">Cost</string>
+    <string name="Goal">Goal : </string>
+    <string name="Cost">Cost : </string>
     <string name="money_reserved">Money Saved</string>
-    <string name="rve">Rewards To Earn</string>
+    <string name="rve">Rewards Earned</string>
     <string name="numberofsmokes">Number of Smoke Free</string>
     <string name="bigquestion">How Much Money You will Save ??</string>
     <string name="week">1 Week</string>
