@@ -102,6 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
@@ -179,7 +180,7 @@
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="start"
+                    android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="@string/week"
                     android:textSize="18sp" />
@@ -189,7 +190,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -202,7 +203,7 @@
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="start"
+                    android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="@string/month"
                     android:textSize="18sp" />
@@ -212,7 +213,7 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -225,7 +226,7 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="start"
+                    android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="@string/months6"
                     android:textSize="18sp" />
@@ -235,7 +236,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -248,7 +249,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="start"
+                    android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="@string/year"
                     android:textSize="18sp" />
@@ -258,7 +259,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

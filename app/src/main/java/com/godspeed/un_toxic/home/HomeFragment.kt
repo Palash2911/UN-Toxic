@@ -48,35 +48,38 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        var rew:Long = 0
+        var money:Long = 0
         val useruid = Firebase.auth.uid.toString()
+        db.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
+            .collection("Goals").get().addOnSuccessListener { res->
+                for(documents in res) {
+                    val save = documents.data["saved"].toString().toLong()
+                    val cos = documents.data["usercost"].toString().toLong()
+//                    money +=save
+                    Log.d("Money", money.toString())
+                    if(save==cos)
+                    {
+                        rew++
+                    }
+                }
+            }.addOnFailureListener {
+                rew=0
+            }
         db.collection("Profiles").get().addOnSuccessListener {
                 result->
             for(document in result){
                 if(document.data["Uid"]==useruid) {
                     Log.d("ID", document.toString())
-                    val money = (((document.data["Price"]).toString()).toLong())
+//                    var money = document.data["Price"].toString().toLong() - document.data["Price"].toString().toLong()
                     val smokes = Integer.parseInt( document.data["Number of Smoke"].toString())
-                    val w = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 7 * Integer.parseInt(document.data["Price"].toString())).toString()
-                    val m = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 30 * Integer.parseInt(document.data["Price"].toString())).toString()
-                    val h = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 183 * Integer.parseInt(document.data["Price"].toString())).toString()
-                    val y = (Integer.parseInt(document.data["Number of Smoke"].toString())* 365 * Integer.parseInt(document.data["Price"].toString())).toString()
-                    var rew:Long = 0
-                    db.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
-                        .collection("Goals").get().addOnSuccessListener { res->
-                            for(documents in res) {
-                                val save = documents.data["saved"].toString().toLong()
-                                val cos = documents.data["usercost"].toString().toLong()
-                                if(save>=cos)
-                                {
-                                    rew++;
-                                }
-                            }
-                        }.addOnFailureListener {
-                            rew=0
-                        }
+                    val w = (smokes * 7 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
+                    val m = (smokes * 30 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
+                    val h = (smokes * 183 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
+                    val y = (smokes * 365 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
                     Log.d("Progress", rew.toString())
-                    prolist.add(Progressdata(smokes, money, rew+1,w,m,h,y))
+                    money+=document.data["Price"].toString().toLong()
+                    prolist.add(Progressdata(smokes, money, rew,w,m,h,y))
                     break
                 }
             }

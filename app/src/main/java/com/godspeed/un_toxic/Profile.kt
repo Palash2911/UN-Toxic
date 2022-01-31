@@ -51,6 +51,7 @@ class Profile : AppCompatActivity() {
         val num = profile["Number"]
         profile["Number of Smoke"] = binding.numbersm.text.toString()
         profile["Price"] = binding.price.text.toString()
+        profile["IntialPrice"] = binding.price.text.toString()
         profile["Uid"] = Firebase.auth.uid.toString()
 
         db.collection("Profiles").document(Firebase.auth.currentUser?.uid.toString())

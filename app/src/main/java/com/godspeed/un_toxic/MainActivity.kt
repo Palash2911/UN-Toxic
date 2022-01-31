@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         messaging = FirebaseMessaging.getInstance();
         if(auth.currentUser != null){
+            binding.layoutLoadingProfile.visibility = View.VISIBLE
+            binding.authCardView.visibility = View.GONE
             db.collection("Profiles").document(auth.currentUser!!.uid).get()
                 .addOnCompleteListener{task2->
                     if(task2.result?.exists() == true){
@@ -47,8 +49,8 @@ class MainActivity : AppCompatActivity() {
                     }
         }
         } else {
-            binding.layoutLoadingProfile.visibility = View.VISIBLE
-            binding.authCardView.visibility = View.GONE
+            binding.layoutLoadingProfile.visibility = View.GONE
+            binding.authCardView.visibility = View.VISIBLE
         }
     }
 

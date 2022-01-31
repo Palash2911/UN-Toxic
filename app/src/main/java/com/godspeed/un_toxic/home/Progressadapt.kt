@@ -62,10 +62,10 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
             addDialog.setView(v)
             addDialog.setPositiveButton("Ok"){
                     dialog,_->
-               val updatefund = ((amount.text.toString().toLong()) + (proitems.totalmoney.toString().toLong())).toString()
-                var newfund= (amount.text.toString().toLong())
+               val upfund = ((amount.text.toString().toLong()) + (proitems.totalmoney.toString().toLong())).toString()
+                var fundsreward=upfund.toLong()
                 database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
-                    .update("Price", updatefund).addOnSuccessListener {
+                    .update("Price", upfund).addOnSuccessListener {
                         Toast.makeText(context, "Funds added to your wallet", Toast.LENGTH_SHORT)
                             .show();
                     }
@@ -74,28 +74,12 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
                         {
                             val save = documents.data["saved"].toString().toLong()
                             val cos = documents.data["usercost"].toString().toLong()
-                            val nsave = (documents.data["saved"].toString().toLong()) + newfund
-                            if(newfund>0)
+//                            Log.d("NSAVe", nsave.toString())
+                            if(fundsreward>0)
                             {
-                                if((nsave+save)<=cos)
+                                if(save==cos)
                                 {
-                                    val newsave = (save+nsave)
-                                    database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").document(documents.id).update("saved", newsave.toString()).addOnSuccessListener {
-                                        Toast.makeText(context,"Money Added to Rewards", Toast.LENGTH_LONG).show()
-                                    }.addOnFailureListener{
-                                        Toast.makeText(context,"Reward Earned Failed", Toast.LENGTH_LONG).show()
-                                    }
-                                    break
-                                }
-                                else
-                                {
-                                    val newsave = (cos-save)
-                                    newfund-=newsave
-                                    database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").document(documents.id).update("saved", newsave.toString()).addOnSuccessListener {
-                                        Toast.makeText(context,"Money Added to Rewards", Toast.LENGTH_LONG).show()
-                                    }.addOnFailureListener{
-                                        Toast.makeText(context,"Reward Earned Failed", Toast.LENGTH_LONG).show()
-                                    }
+                                    fundsreward-=save
                                 }
                             }
                             else
@@ -104,6 +88,43 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
                             }
                         }
                     }
+                database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").get().addOnSuccessListener { result->
+                    for(documents in result)
+                    {
+                        val save = documents.data["saved"].toString().toLong()
+                        val cos = documents.data["usercost"].toString().toLong()
+                        val nsave = fundsreward
+//                            Log.d("NSAVe", nsave.toString())
+                        if(fundsreward>0)
+                        {
+                            if((nsave+save)<=cos)
+                            {
+                                val newsaved = (nsave+save)
+                                fundsreward-=newsaved
+                                database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").document(documents.id).update("saved", newsaved.toString()).addOnSuccessListener {
+                                    Toast.makeText(context,"Money Added to Rewards", Toast.LENGTH_LONG).show()
+                                }.addOnFailureListener{
+                                    Toast.makeText(context,"Reward Earned Failed", Toast.LENGTH_LONG).show()
+                                }
+                            }
+                            else
+                            {
+                                var newsaved = (cos-save)
+                                fundsreward-=newsaved
+                                newsaved+=save
+                                database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").document(documents.id).update("saved", newsaved.toString()).addOnSuccessListener {
+                                    Toast.makeText(context,"Money Added to Rewards", Toast.LENGTH_LONG).show()
+                                }.addOnFailureListener{
+                                    Toast.makeText(context,"Reward Earned Failed", Toast.LENGTH_LONG).show()
+                                }
+                            }
+                        }
+                        else
+                        {
+                            break
+                        }
+                    }
+                }
             }
             addDialog.setNegativeButton("Cancel"){
                     dialog,_->
