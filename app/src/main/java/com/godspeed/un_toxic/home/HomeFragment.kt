@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
             for(document in result){
                 if(document.data["Uid"]==useruid) {
                     Log.d("ID", document.toString())
-                    val money = (((document.data["Price"]).toString()).toLong())*(((document.data["Number of Smoke"]).toString()).toLong())
+                    val money = (((document.data["Price"]).toString()).toLong())
                     val smokes = Integer.parseInt( document.data["Number of Smoke"].toString())
                     val w = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 7 * Integer.parseInt(document.data["Price"].toString())).toString()
                     val m = (Integer.parseInt(document.data["Number of Smoke"].toString()) * 30 * Integer.parseInt(document.data["Price"].toString())).toString()

@@ -16,9 +16,12 @@ import com.godspeed.un_toxic.dashboard.UserData
 import com.godspeed.un_toxic.home.Progressadapt.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
-    private lateinit var database:FirebaseFirestore
+val database = Firebase.firestore
+
 class Progressadapt (private var progress: ArrayList<Progressdata> , private  var context: Context) : RecyclerView.Adapter<ItemViewHolder>() {
     class ItemViewHolder(v: View): RecyclerView.ViewHolder(v) {
             val money = v.findViewById<TextView>(R.id.Totalmoneysave)
@@ -28,16 +31,12 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
             val halfyearmon = v.findViewById<TextView>(R.id.halfyearmoney)
             val yearmon = v.findViewById<TextView>(R.id.yearmoney)
             val addFunds = v.findViewById<Button>(R.id.addFunds);
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val adaptlayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.progresscard, parent, false)
         context = parent.context;
-        database = FirebaseFirestore.getInstance();
-
         return ItemViewHolder(adaptlayout)
     }
 
@@ -57,18 +56,17 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
             /**set view*/
             val amount = v.findViewById<EditText>(R.id.fund);
 
-
             val addDialog = AlertDialog.Builder(context)
 
             addDialog.setView(v)
             addDialog.setPositiveButton("Ok"){
                     dialog,_->
-                val fund = amount.text;
+                val updatefund=((amount.text.toString().toLong())+(proitems.totalmoney.toString().toLong())).toString()
                 database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
-                    .update("savings",fund).addOnSuccessListener {
-                        Toast.makeText(context , "Funds added to your wallet" , Toast.LENGTH_SHORT ).show();
+                    .update("Price",updatefund).addOnSuccessListener {
+                        Toast.makeText(context, "Funds added to your wallet", Toast.LENGTH_SHORT)
+                            .show();
                     }
-
             }
             addDialog.setNegativeButton("Cancel"){
                     dialog,_->

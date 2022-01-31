@@ -33,8 +33,10 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/cardbackground"
                     android:gravity="center"
-                    android:text="@string/tip1"
-                    android:textSize="16sp" />
+                    android:text="@string/tip2"
+                    android:textColor="#F3F1F1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -52,7 +54,9 @@
                     android:background="@drawable/cardbackground"
                     android:gravity="center"
                     android:text="@string/tip1"
-                    android:textSize="16sp" />
+                    android:textColor="#F3F1F1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -68,8 +72,10 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/cardbackground"
                     android:gravity="center"
-                    android:text="@string/tip1"
-                    android:textSize="16sp" />
+                    android:text="@string/tip3"
+                    android:textColor="#F3F1F1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -86,8 +92,10 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/cardbackground"
                     android:gravity="center"
-                    android:text="@string/tip1"
-                    android:textSize="16sp" />
+                    android:text="@string/tips4"
+                    android:textColor="#F3F1F1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -103,8 +111,10 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/cardbackground"
                     android:gravity="center"
-                    android:text="@string/tip1"
-                    android:textSize="16sp" />
+                    android:text="@string/tip5"
+                    android:textColor="#F3F1F1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -120,25 +130,10 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/cardbackground"
                     android:gravity="center"
-                    android:text="@string/tip1"
-                    android:textSize="16sp" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="15dp"
-                android:background="@drawable/cardbackground"
-                android:scrollbarAlwaysDrawVerticalTrack="true"
-                app:cardCornerRadius="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/cardbackground"
-                    android:gravity="center"
-                    android:text="@string/tip1"
-                    android:textSize="16sp" />
+                    android:text="@string/tip6"
+                    android:textColor="#F1EEEE"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -154,8 +149,29 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/cardbackground"
                     android:gravity="center"
-                    android:text="@string/tip1"
-                    android:textSize="16sp" />
+                    android:text="@string/tip7"
+                    android:textColor="#F1EEEE"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/cardbackground"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cardbackground"
+                    android:gravity="center"
+                    android:text="@string/tip8"
+                    android:textColor="#F1EEEE"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
             <TextView
                 android:layout_width="match_parent"

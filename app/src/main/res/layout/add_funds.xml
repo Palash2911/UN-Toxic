@@ -7,7 +7,6 @@
     android:gravity="center"
     >
 
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_margin="16dp"
@@ -19,7 +18,7 @@
             android:hint="AMOUNT"
             android:layout_margin="5dp"
             android:paddingTop="5dp"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:textColor="@color/purple_500"
             android:textSize="18sp"
             android:textStyle="bold"
