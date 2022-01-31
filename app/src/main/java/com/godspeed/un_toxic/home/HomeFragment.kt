@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
                 }
             }
 
-            val adapter = Progressadapt(prolist)
+            val adapter = context?.let { Progressadapt(prolist , it) };
             prorecycle.adapter = adapter
         }.addOnFailureListener { exception ->
                 Log.d("TAG", "Error getting documents: ", exception)

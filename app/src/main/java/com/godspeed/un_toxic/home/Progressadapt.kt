@@ -17,9 +17,9 @@ import com.godspeed.un_toxic.home.Progressadapt.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-private lateinit var context:Context
+
     private lateinit var database:FirebaseFirestore
-class Progressadapt (private var progress: ArrayList<Progressdata>) : RecyclerView.Adapter<ItemViewHolder>() {
+class Progressadapt (private var progress: ArrayList<Progressdata> , private  var context: Context) : RecyclerView.Adapter<ItemViewHolder>() {
     class ItemViewHolder(v: View): RecyclerView.ViewHolder(v) {
             val money = v.findViewById<TextView>(R.id.Totalmoneysave)
             val reward = v.findViewById<TextView>(R.id.rewardearn)
