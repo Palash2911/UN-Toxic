@@ -15,7 +15,12 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
 import android.content.Intent.getIntent
+import android.widget.Button
 import android.widget.Toast
+import com.godspeed.un_toxic.Homepage
+import com.godspeed.un_toxic.Profile
+import com.godspeed.un_toxic.R
+import com.godspeed.un_toxic.updateprofile
 
 
 class HomeFragment : Fragment() {
@@ -44,7 +49,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val useruid = Firebase.auth.uid.toString()
-
         db.collection("Profiles").get().addOnSuccessListener {
                 result->
             for(document in result){

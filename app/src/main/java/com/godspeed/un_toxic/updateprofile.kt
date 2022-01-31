@@ -25,9 +25,9 @@ class updateprofile : AppCompatActivity() {
 
         db.collection("Profiles").document(Firebase.auth.currentUser?.uid.toString()).get().addOnSuccessListener { snapshot ->
             binding.Name.setText(snapshot["Name"] as String);
-            binding.Number.setText(snapshot["Name"] as String);
-            binding.numbersm.setText(snapshot["Name"] as String);
-            binding.price.setText(snapshot["Name"] as String);
+            binding.Number.setText(snapshot["Number"] as String);
+            binding.numbersm.setText(snapshot["Number of Smoke"] as String);
+            binding.price.setText(snapshot["Price"] as String);
         }
 
         binding.submitbtn.setOnClickListener {

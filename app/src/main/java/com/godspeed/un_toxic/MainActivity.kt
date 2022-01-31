@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this, Homepage::class.java)
                         val num = "9619142911"
                         intent.putExtra("Number", num)
-                        startActivity(intent )
+                        startActivity(intent)
                         finish()
                         Toast.makeText(this, "Welcome Back Champion !! ", Toast.LENGTH_SHORT).show()
                     } else {
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }
-                }
+        }
         } else {
             binding.layoutLoadingProfile.visibility = View.GONE
             binding.authCardView.visibility = View.VISIBLE

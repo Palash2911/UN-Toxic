@@ -6,16 +6,29 @@
     android:layout_height="match_parent"
     android:background="#f4f7fe">
 
+
+    <Button
+        android:id="@+id/effectbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/btneffect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savedmoneyview"
+        tools:ignore="TextContrastCheck" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/moneyview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
+        android:padding="5dp"
         app:cardCornerRadius="27dp"
         app:cardElevation="6dp"
-        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,17 +37,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="8dp">
+            android:orientation="vertical">
 
             <ImageView
-                app:tint="@color/purple_200"
                 android:id="@+id/money"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_baseline_attach_money_24" />
+                android:src="@drawable/ic_baseline_attach_money_24"
+                app:tint="@color/purple_200" />
 
             <TextView
                 android:id="@+id/Totalmoneysave"
@@ -52,21 +65,20 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/money_reserved"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/addFunds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp"
-                android:textColor="@color/white"
                 android:text="ADD FUNDS +"
-                android:layout_marginTop="15dp"/>
+                android:textColor="@color/white" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 
 
     <androidx.cardview.widget.CardView
@@ -74,10 +86,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        app:cardElevation="6dp"
         app:cardCornerRadius="27dp"
+        app:cardElevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,8 +107,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                app:tint="@color/purple_200"
-                android:src="@drawable/ic_baseline_auto_awesome_24" />
+                android:src="@drawable/ic_baseline_auto_awesome_24"
+                app:tint="@color/purple_200" />
 
             <TextView
                 android:id="@+id/rewardearn"
@@ -114,12 +126,11 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/rve"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="20sp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 
     <androidx.cardview.widget.CardView
@@ -127,12 +138,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
-        app:cardCornerRadius="30px"
-        android:layout_marginTop="40dp"
-        app:cardElevation="6dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:padding="20dp"
+        app:cardCornerRadius="30px"
+        app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rewardview">
@@ -140,18 +151,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="18dp"
                 android:text="@string/bigquestion"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

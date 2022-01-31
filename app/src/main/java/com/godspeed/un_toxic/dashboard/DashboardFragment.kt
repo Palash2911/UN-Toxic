@@ -45,8 +45,6 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         userList = ArrayList()
         /**set find Id*/
         addsBtn = view.findViewById(R.id.addingBtn)
