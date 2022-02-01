@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,8 +18,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#E8E8E8">
+            android:background="@color/white"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -38,9 +38,9 @@
 
                 <EditText
                     android:id="@+id/Name"
-                    android:layout_width="275dp"
+                    android:layout_width="252dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="40dp"
                     android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/etn"
@@ -51,11 +51,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.274"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TextContrastCheck" />
 
                 <EditText
                     android:id="@+id/Number"
-                    android:layout_width="275dp"
+                    android:layout_width="252dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="32dp"
                     android:background="@drawable/edit_text_background"
@@ -68,11 +69,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.215"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="parent" />
+                    app:layout_constraintTop_toBottomOf="parent"
+                    tools:ignore="TextContrastCheck" />
 
                 <EditText
                     android:id="@+id/numbersm"
-                    android:layout_width="275dp"
+                    android:layout_width="252dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="32dp"
                     android:background="@drawable/edit_text_background"
@@ -89,7 +91,7 @@
 
                 <EditText
                     android:id="@+id/price"
-                    android:layout_width="275dp"
+                    android:layout_width="252dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="32dp"
                     android:background="@drawable/edit_text_background"
@@ -111,11 +113,11 @@
                 android:id="@+id/submitbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:text="@string/conitnue"
+                android:text="@string/update_btn"
                 android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
 

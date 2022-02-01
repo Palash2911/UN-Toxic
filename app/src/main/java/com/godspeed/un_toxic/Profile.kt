@@ -53,7 +53,7 @@ class Profile : AppCompatActivity() {
         profile["Price"] = binding.price.text.toString()
         profile["IntialPrice"] = binding.price.text.toString()
         profile["Uid"] = Firebase.auth.uid.toString()
-
+        profile["Reward"]=0.toString()
         db.collection("Profiles").document(Firebase.auth.currentUser?.uid.toString())
             .set(profile).addOnCompleteListener{task->
                 if (task.isSuccessful){

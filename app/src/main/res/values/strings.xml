@@ -14,7 +14,7 @@
     <string name="drinking">Drinking</string>
     <string name="smoking">Smoking</string>
     <string name="conitnue">Conitnue</string>
-    <string name="enter_no">Enter Number of Cigarettes Per Day</string>
+    <string name="enter_no">Cigarettes Per Day</string>
     <string name="title_activity_homepage">Homepage</string>
     <string name="title_home">Progress</string>
     <string name="title_dashboard">Rewards</string>
@@ -118,6 +118,6 @@
     <string name="title11"><b>Heart Disease and ED</b></string>
     <string name="update_profile">Update Profile</string>
     <string name="goalsstart">ADD GOALS TO GET STARTED</string>
-
+    <string name="update_btn">Update</string>
 
 </resources>

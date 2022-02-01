@@ -35,32 +35,37 @@
         android:id="@+id/authCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="12dp"
         android:visibility="visible"
         app:cardCornerRadius="12dp"
-        android:elevation="12dp"
-        android:layout_centerInParent="true"
         app:cardElevation="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@color/white"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/layout_otp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:orientation="vertical"
                 android:visibility="gone">
 
                 <EditText
                     android:id="@+id/otp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/enter_otp"
                     android:importantForAutofill="no"
@@ -68,6 +73,7 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
                     android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck"
                     tools:layout_editor_absoluteX="314dp" />
 
                 <Button
@@ -75,6 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
                     android:text="@string/verify" />
             </LinearLayout>
 
@@ -90,7 +97,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="25dp"
                     android:background="@drawable/edit_text_background"
                     android:gravity="center"
@@ -106,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="15dp"
                     android:text="@string/get_otp" />
 
             </LinearLayout>

@@ -49,7 +49,10 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int ) {
         val proitems=progress[position]
 
-        holder.money.text = proitems.totalmoney.toString()
+        var rew:Long = 0
+        var money:Long = 0
+
+        holder.money.text = "Hello World"
         holder.reward.text=proitems.rewardsearned.toString()
         holder.weekmon.text = "Rs. " + proitems.weekm
         holder.monthmon.text = "Rs. " + proitems.monthm
@@ -91,6 +94,7 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
                                 if(save==cos)
                                 {
                                     fundsreward-=save
+                                    rew++
                                 }
                             }
                             else
@@ -105,7 +109,7 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
                         val save = documents.data["saved"].toString().toLong()
                         val cos = documents.data["usercost"].toString().toLong()
                         val nsave = fundsreward
-//                            Log.d("NSAVe", nsave.toString())
+//                      Log.d("NSAVe", nsave.toString())
                         if(fundsreward>0)
                         {
                             if((nsave+save)<=cos)
@@ -116,6 +120,10 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
                                     Toast.makeText(context,"Money Added to Rewards", Toast.LENGTH_LONG).show()
                                 }.addOnFailureListener{
                                     Toast.makeText(context,"Reward Earned Failed", Toast.LENGTH_LONG).show()
+                                }
+                                if((nsave+save)==cos)
+                                {
+                                    rew++
                                 }
                             }
                             else
@@ -141,10 +149,10 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
                     dialog,_->
                 dialog.dismiss()
                 Toast.makeText(context,"Cancel",Toast.LENGTH_SHORT).show()
-
             }
             addDialog.create()
             addDialog.show()
+            holder.reward.text=rew.toString()
         }
     }
     override fun getItemCount() = progress.size

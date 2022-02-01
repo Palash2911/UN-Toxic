@@ -3,21 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Profile"
-  >
+    android:layout_height="wrap_content"
+    tools:context=".Profile">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="50dp"
         android:elevation="12dp"
-        app:cardCornerRadius="70px"
-        android:padding="25dp"
-        app:cardElevation="12dp"
         android:outlineAmbientShadowColor="#7090B0"
         android:outlineSpotShadowColor="#7090B0"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="25dp"
+        app:cardCornerRadius="70px"
+        app:cardElevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,8 +24,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -37,25 +36,26 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Create Profile"
                     android:textColor="@color/black"
-                    android:textSize="28sp" />
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
                 <EditText
                     android:id="@+id/Name"
-                    android:layout_width="275dp"
+                    android:layout_width="252dp"
                     android:layout_height="50dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="40dp"
                     android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/etn"
                     android:importantForAutofill="no"
                     android:inputType="text"
                     android:minHeight="48dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.274"
@@ -63,18 +63,18 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:background="@drawable/edit_text_background"
                     android:id="@+id/Number"
-                    android:layout_width="275dp"
+                    android:layout_width="252dp"
                     android:layout_height="50dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey"
                     android:layout_marginTop="32dp"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/entp"
                     android:importantForAutofill="no"
                     android:inputType="phone"
                     android:minHeight="48dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.215"
@@ -82,18 +82,18 @@
                     app:layout_constraintTop_toBottomOf="parent" />
 
                 <EditText
-                    android:background="@drawable/edit_text_background"
                     android:id="@+id/numbersm"
-                    android:layout_width="275dp"
+                    android:layout_width="252dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="36dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/enter_no"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.26"
@@ -102,18 +102,18 @@
                     tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
                 <EditText
-                    android:background="@drawable/edit_text_background"
                     android:id="@+id/price"
-                    android:layout_width="275dp"
+                    android:layout_width="252dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="32dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey"
+                    android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:hint="@string/pricepersm"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.221"
@@ -127,9 +127,9 @@
                 android:id="@+id/submitbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="@string/conitnue"
                 android:textColor="@color/white"

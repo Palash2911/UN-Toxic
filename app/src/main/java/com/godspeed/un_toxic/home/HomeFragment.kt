@@ -48,24 +48,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var rew:Long = 0
-        var money:Long = 0
         val useruid = Firebase.auth.uid.toString()
-        db.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
-            .collection("Goals").get().addOnSuccessListener { res->
-                for(documents in res) {
-                    val save = documents.data["saved"].toString().toLong()
-                    val cos = documents.data["usercost"].toString().toLong()
-//                    money +=save
-                    Log.d("Money", money.toString())
-                    if(save==cos)
-                    {
-                        rew++
-                    }
-                }
-            }.addOnFailureListener {
-                rew=0
-            }
         db.collection("Profiles").get().addOnSuccessListener {
                 result->
             for(document in result){
@@ -77,9 +60,7 @@ class HomeFragment : Fragment() {
                     val m = (smokes * 30 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
                     val h = (smokes * 183 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
                     val y = (smokes * 365 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
-                    Log.d("Progress", rew.toString())
-                    money+=document.data["Price"].toString().toLong()
-                    prolist.add(Progressdata(smokes, money, rew,w,m,h,y))
+                    prolist.add(Progressdata(smokes, 0, 0,w,m,h,y))
                     break
                 }
             }
