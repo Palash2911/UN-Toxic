@@ -23,7 +23,7 @@
     <string name="tip1">Constant Changes Required</string>
     <string name="set_the_goal">Set Goal</string>
     <string name="Goal">Goal : </string>
-    <string name="Cost">Cost : </string>
+    <string name="Cost">Cost(Rs.) : </string>
     <string name="money_reserved">Money Saved</string>
     <string name="rve">Rewards Earned</string>
     <string name="numberofsmokes">Number of Smoke Free</string>

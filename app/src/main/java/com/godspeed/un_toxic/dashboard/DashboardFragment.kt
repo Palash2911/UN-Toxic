@@ -62,14 +62,16 @@ class DashboardFragment : Fragment() {
                 val userData = UserData(
                     goal.data["usergoal"] as String,
                     goal.data["usercost"] as String,
-                    goal.data["saved"] as String
+                    goal.data["saved"] as String,
+                    goal.data["progress"] as String
                 );
                 userList.add(userData);
             }
             userAdapter.notifyDataSetChanged();
         }
-
-        addsBtn.setOnClickListener { addInfo() }
+        addsBtn.setOnClickListener {
+            addInfo()
+        }
     }
 
 
@@ -77,22 +79,21 @@ class DashboardFragment : Fragment() {
         val inflter = LayoutInflater.from(requireContext())
         val v = inflter.inflate(R.layout.add_item, null)
 
-        /**set view*/
         val Goal = v.findViewById<EditText>(R.id.GOAL)
         val Cost = v.findViewById<EditText>(R.id.COST)
 
+        /**set view*/
         val addDialog = AlertDialog.Builder(requireContext())
-
         addDialog.setView(v)
         addDialog.setPositiveButton("Ok") { dialog, _ ->
             val goal = Goal.text.toString()
-            val cost = (Cost.text.toString());
-            val userData = UserData(goal, cost, "0");
+            val cost = Cost.text.toString()
+
+            val userData = UserData(goal, cost, "0", "0");
             userList.add(userData)
             database.collection("/Profiles/" + FirebaseAuth.getInstance().uid.toString() + "/Goals")
                 .document(goal).set(userData).addOnSuccessListener {
                     Toast.makeText(context, "Goal ADDED !! ", Toast.LENGTH_SHORT).show()
-                    Toast.makeText(context, "When Goal Achieved Add some Funds to wallet to Update Rewards Earned !! ", Toast.LENGTH_LONG).show()
             }
             userAdapter.notifyDataSetChanged()
 
@@ -100,7 +101,7 @@ class DashboardFragment : Fragment() {
         }
         addDialog.setNegativeButton("Cancel") { dialog, _ ->
             dialog.dismiss()
-            Toast.makeText(requireContext(), "Cancel", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Cancelled", Toast.LENGTH_SHORT).show()
         }
         addDialog.create()
         addDialog.show()

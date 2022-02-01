@@ -54,14 +54,14 @@ class HomeFragment : Fragment() {
             for(document in result){
                 if(document.data["Uid"]==useruid) {
                     Log.d("ID", document.toString())
-//                    var money = document.data["Price"].toString().toLong() - document.data["Price"].toString().toLong()
+                    val money = document.data["Price"].toString().toLong()
                     val reward = document.data["Reward"].toString()
                     val smokes = Integer.parseInt( document.data["Number of Smoke"].toString())
                     val w = (smokes * 7 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
                     val m = (smokes * 30 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
                     val h = (smokes * 183 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
                     val y = (smokes * 365 * Integer.parseInt(document.data["IntialPrice"].toString())).toString()
-                    prolist.add(Progressdata(smokes, 0, reward.toLong(),w,m,h,y))
+                    prolist.add(Progressdata(smokes, money, reward.toLong(),w,m,h,y))
                     break
                 }
             }

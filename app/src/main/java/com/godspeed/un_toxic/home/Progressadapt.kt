@@ -49,12 +49,13 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int ) {
         val proitems=progress[position]
 
-        holder.money.text = "Hello World"
+        holder.money.text=proitems.totalmoney.toString()
         holder.reward.text= proitems.rewardsearned.toString()
         holder.weekmon.text = "Rs. " + proitems.weekm
         holder.monthmon.text = "Rs. " + proitems.monthm
         holder.halfyearmon.text = "Rs. " + proitems.halfm
         holder.yearmon.text = "Rs. " + proitems.yearm
+
         holder.effectbtn.setOnClickListener {
             Toast.makeText(this.context, "Press Back Button To Return To HomePage", Toast.LENGTH_SHORT).show()
             val intent = Intent(this.context, EffectActivity::class.java)
@@ -68,56 +69,38 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
             val amount = v.findViewById<EditText>(R.id.fund);
 
             val addDialog = AlertDialog.Builder(context)
+            val upf = proitems.totalmoney.toString()
+            database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
+                .update("Price", upf).addOnSuccessListener {
+//                    Toast.makeText(context, "Funds Added !!", Toast.LENGTH_SHORT)
+//                        .show();
+                }
 
             addDialog.setView(v)
-            addDialog.setPositiveButton("Ok"){
-
-                    dialog,_->
+            addDialog.setPositiveButton("Ok"){ dialog,_->
                val upfund = ((amount.text.toString().toLong()) + (proitems.totalmoney.toString().toLong())).toString()
-                var fundsreward=upfund.toLong()
-                var rew: Long = 0
+               var fundsreward=upfund.toLong()
                 database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
                     .update("Price", upfund).addOnSuccessListener {
-                        Toast.makeText(context, "Funds ADDED !!", Toast.LENGTH_SHORT)
+                        Toast.makeText(context, "Funds Added, Refresh To update :)", Toast.LENGTH_SHORT)
                             .show();
                     }
-                database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").get().addOnSuccessListener { result->
-                        for(documents in result)
-                        {
-                            val save = documents.data["saved"].toString().toLong()
-                            val cos = documents.data["usercost"].toString().toLong()
-//                            Log.d("NSAVe", nsave.toString())
-                                if(save==cos)
-                                {
-                                    rew++
-                                }
-                        }
-                    database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString())
-                        .update("Reward", rew.toString()).addOnSuccessListener {
-                            Toast.makeText(context, "Reward Done !!", Toast.LENGTH_SHORT)
-                                .show();
-                        }
-                    }
+
                 database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").get().addOnSuccessListener { result->
                     for(documents in result)
                     {
                         val save = documents.data["saved"].toString().toLong()
                         val cos = documents.data["usercost"].toString().toLong()
-                        val nsave = fundsreward
-//                      Log.d("NSAVe", nsave.toString())
                         if(fundsreward>0)
                         {
-                            if((nsave+save)<=cos)
+                            if((fundsreward+save)<=cos)
                             {
-                                val newsaved = (nsave+save)
+                                val newsaved = (fundsreward+save)
                                 fundsreward-=newsaved
                                 database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").document(documents.id).update("saved", newsaved.toString()).addOnSuccessListener {
+                                    Log.d("Rewards", "Reward Earned")
                                 }.addOnFailureListener{
                                     Toast.makeText(context,"Reward Earned Failed", Toast.LENGTH_LONG).show()
-                                }
-                                if((nsave+save)==cos)
-                                {
-                                    rew++
                                 }
                             }
                             else
@@ -126,6 +109,7 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
                                 fundsreward-=newsaved
                                 newsaved+=save
                                 database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").document(documents.id).update("saved", newsaved.toString()).addOnSuccessListener {
+                                    Log.d("Rewards", "Reward Earning")
                                 }.addOnFailureListener{
                                     Toast.makeText(context,"Reward Earned Failed", Toast.LENGTH_LONG).show()
                                 }
@@ -137,8 +121,6 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
                         }
                     }
                 }
-                Log.d("Rew", rew.toString())
-
             }
             addDialog.setNegativeButton("Cancel"){
                     dialog,_->
@@ -147,6 +129,23 @@ class Progressadapt (private var progress: ArrayList<Progressdata> , private  va
             }
             addDialog.create()
             addDialog.show()
+        }
+        //REWARD CALCULATION
+        var rew: Long = 0
+        database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).collection("Goals").get().addOnSuccessListener { result->
+            for(documents in result)
+            {
+                val save = documents.data["saved"].toString().toLong()
+                val cos = documents.data["usercost"].toString().toLong()
+                if(save==cos)
+                {
+                    rew++
+                }
+            }
+            Log.d("Re", rew.toString())
+            database.collection("Profiles").document(FirebaseAuth.getInstance().uid.toString()).update("Reward", rew.toString()).addOnSuccessListener {
+            }
+            holder.reward.text=rew.toString()
         }
     }
     override fun getItemCount() = progress.size

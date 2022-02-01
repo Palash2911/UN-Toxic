@@ -50,7 +50,7 @@ class Profile : AppCompatActivity() {
         profile["Number"] = binding.Number.text.toString()
         val num = profile["Number"]
         profile["Number of Smoke"] = binding.numbersm.text.toString()
-        profile["Price"] = binding.price.text.toString()
+        profile["Price"] = "0"
         profile["IntialPrice"] = binding.price.text.toString()
         profile["Uid"] = Firebase.auth.uid.toString()
         profile["Reward"]=0.toString()
