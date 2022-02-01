@@ -11,7 +11,7 @@ Un-Toxic helps people who smoke, to live a better life by helping them quit smok
 
 ### Application Images:  
                                                                               
-<img src="Images/img1.jpg" width="240" height="450"><img src="Images/img2.jpg" width="240" height="450"><img src="Images/img3.jpg" width="240" height="450"><img src="Images/img4.jpg" width="240" height="450">
+<img src="Images/Img1_LoadPage.png" width="240" height="450"><img src="Images/Img2_SignUp.png" width="240" height="450"><img src="Images/Img4_Profile.png" width="240" height="450"><img src="Images/Img5_HomePage.png" width="240" height="450"><img src="Images/Img6_Goals.png" width="240" height="450"><img src="Images/Img7_Tips.png" width="240" height="450">
 
 
 ### Functionality & Concepts used:
