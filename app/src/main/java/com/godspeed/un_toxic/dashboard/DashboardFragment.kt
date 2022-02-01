@@ -91,7 +91,8 @@ class DashboardFragment : Fragment() {
             userList.add(userData)
             database.collection("/Profiles/" + FirebaseAuth.getInstance().uid.toString() + "/Goals")
                 .document(goal).set(userData).addOnSuccessListener {
-                Toast.makeText(context, "Goal ADDED !! ", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Goal ADDED !! ", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "When Goal Achieved Add some Funds to wallet to Update Rewards Earned !! ", Toast.LENGTH_LONG).show()
             }
             userAdapter.notifyDataSetChanged()
 
