@@ -15,7 +15,7 @@ Un-Toxic helps people who smoke, to live a better life by helping them quit smok
 
 
 ### Functionality & Concepts used:
-The App has a very simple and interactive interface that helps the students select their favorite food and track their current/past order. 
+The App has a very simple and interactive interface that helps the user to QUIT SMOKING and Live a better life.
 Following are a few android concepts used to achieve the functionalities in the app:
 
   1. Constraint Layout: Most of the activities in the app uses a flexible constraint layout, which is easy to handle for different screen sizes.
