@@ -23,7 +23,6 @@ class Homepage : AppCompatActivity() {
     private lateinit var navController: NavController
     private val auth = FirebaseAuth.getInstance()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

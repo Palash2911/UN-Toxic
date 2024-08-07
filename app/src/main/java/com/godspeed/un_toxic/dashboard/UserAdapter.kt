@@ -29,7 +29,6 @@ class UserAdapter(val c: DashboardFragment, val userList:ArrayList<UserData>):Re
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-
         val inflater=LayoutInflater.from(parent.context)
         val v=inflater.inflate(R.layout.list_item_for_rewards,parent,false)
         return UserViewHolder(v)

@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProgressBinding.inflate(inflater, container, false)
 
         prorecycle=binding.pro

@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/UN-Toxic.iml" filepath="$PROJECT_DIR$/.idea/modules/UN-Toxic.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UN-Toxic.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UN-Toxic.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UN-Toxic.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UN-Toxic.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UN-Toxic.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UN-Toxic.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UN-Toxic.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UN-Toxic.app.unitTest.iml" />
     </modules>
   </component>
 </project>
